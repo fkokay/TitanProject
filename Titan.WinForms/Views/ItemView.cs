@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Titan.Data;
 using Titan.Core.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Titan.WinForms.Views
 {
@@ -20,16 +21,22 @@ namespace Titan.WinForms.Views
         {
             InitializeComponent();
             _context = context;
+            this.pLinqInstantFeedbackSourceUnitConversion.GetEnumerable += PLinqInstantFeedbackSourceUnitConversion_GetEnumerable; ;
+       }
+
+        private void PLinqInstantFeedbackSourceUnitConversion_GetEnumerable(object sender, DevExpress.Data.PLinq.GetEnumerableEventArgs e)
+        {
+            e.Source = _context.ItemUnitConversions.AsQueryable();
+            e.Tag = _context;
         }
 
         private async void simpleButtonSave_Click(object sender, EventArgs e)
         {
-            var item = new Item
-            {
-                Code = textEditCode.Text,
-                Name = textEditName.Text,
-                Active = 1
-            };
+            var item = new Item();
+            item.Code = textEditCode.Text;
+            item.Name = textEditName.Text;
+            item.MainUnitCode = lookUpEditUnit.EditValue.ToString();
+            item.Active = 1;
 
             _context.Items.Add(item);
             await _context.SaveChangesAsync();
@@ -43,6 +50,27 @@ namespace Titan.WinForms.Views
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private async void ItemView_Load(object sender, EventArgs e)
+        {
+            await LoadUnits();
+        }
+
+        private async Task LoadUnits()
+        {
+            try
+            {
+                var units = await _context.Units.ToListAsync();
+                lookUpEditUnit.Properties.DataSource = units;
+                lookUpEditUnit.Properties.DisplayMember = "Name";
+                lookUpEditUnit.Properties.ValueMember = "Code";
+                lookUpEditUnit.Properties.NullText = "Seçiniz...";
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
     }
 }

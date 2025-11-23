@@ -82,6 +82,7 @@
             barButtonItemAdd.Caption = "Yeni";
             barButtonItemAdd.Id = 0;
             barButtonItemAdd.Name = "barButtonItemAdd";
+            barButtonItemAdd.ItemClick += barButtonItemAdd_ItemClick;
             // 
             // barButtonItemEdit
             // 

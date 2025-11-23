@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,16 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Titan.Data;
+using Titan.WinForms.Views;
 
 namespace Titan.WinForms.UserControls
 {
     public partial class WarehouseListView : DevExpress.XtraEditors.XtraUserControl
     {
         private readonly TitanContext _context;
-        public WarehouseListView(TitanContext context)
+        private readonly IServiceProvider _provider;
+        public WarehouseListView(TitanContext context, IServiceProvider provider)
         {
             InitializeComponent();
-            _context = context; 
+            _context = context;
+            _provider = provider;
             this.pLinqInstantFeedbackSource.GetEnumerable += PLinqInstantFeedbackSource_GetEnumerable;
         }
 
@@ -26,6 +30,21 @@ namespace Titan.WinForms.UserControls
         {
             e.Source = _context.Warehouses.AsQueryable();
             e.Tag = _context;
+        }
+
+        private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            pLinqInstantFeedbackSource.Refresh();
+        }
+
+        private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = _provider.GetRequiredService<WarehouseView>();
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                pLinqInstantFeedbackSource.Refresh();
+            }
         }
     }
 }

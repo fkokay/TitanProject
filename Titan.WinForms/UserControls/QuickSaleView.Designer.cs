@@ -29,19 +29,27 @@
         private void InitializeComponent()
         {
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            gridControl1 = new DevExpress.XtraGrid.GridControl();
-            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridControlLine = new DevExpress.XtraGrid.GridControl();
+            gridViewLine = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUnitCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            colTaxRate = new DevExpress.XtraGrid.Columns.GridColumn();
+            colLineTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             panelControl2 = new DevExpress.XtraEditors.PanelControl();
             buttonEditCustomer = new DevExpress.XtraEditors.ButtonEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            tileControl1 = new DevExpress.XtraEditors.TileControl();
+            tileControlItems = new DevExpress.XtraEditors.TileControl();
             panelControl3 = new DevExpress.XtraEditors.PanelControl();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButtonPayment = new DevExpress.XtraEditors.SimpleButton();
+            colCurrency = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridControlLine).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewLine).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).BeginInit();
             panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonEditCustomer.Properties).BeginInit();
@@ -51,28 +59,104 @@
             // 
             // panelControl1
             // 
-            panelControl1.Controls.Add(gridControl1);
+            panelControl1.Controls.Add(gridControlLine);
             panelControl1.Controls.Add(panelControl2);
             panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             panelControl1.Location = new System.Drawing.Point(0, 0);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new System.Drawing.Size(545, 729);
+            panelControl1.Size = new System.Drawing.Size(1099, 768);
             panelControl1.TabIndex = 0;
             // 
-            // gridControl1
+            // gridControlLine
             // 
-            gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridControl1.Location = new System.Drawing.Point(2, 75);
-            gridControl1.MainView = gridView1;
-            gridControl1.Name = "gridControl1";
-            gridControl1.Size = new System.Drawing.Size(541, 652);
-            gridControl1.TabIndex = 1;
-            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            gridControlLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridControlLine.Location = new System.Drawing.Point(2, 75);
+            gridControlLine.MainView = gridViewLine;
+            gridControlLine.Name = "gridControlLine";
+            gridControlLine.Size = new System.Drawing.Size(1095, 691);
+            gridControlLine.TabIndex = 1;
+            gridControlLine.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewLine });
             // 
-            // gridView1
+            // gridViewLine
             // 
-            gridView1.GridControl = gridControl1;
-            gridView1.Name = "gridView1";
+            gridViewLine.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colItemCode, colItemName, colQuantity, colUnitCode, colUnitPrice, colCurrency, colTaxRate, colLineTotal });
+            gridViewLine.GridControl = gridControlLine;
+            gridViewLine.Name = "gridViewLine";
+            gridViewLine.OptionsView.ShowAutoFilterRow = true;
+            gridViewLine.OptionsView.ShowFooter = true;
+            gridViewLine.OptionsView.ShowGroupPanel = false;
+            // 
+            // colItemCode
+            // 
+            colItemCode.Caption = "Malzeme Kodu";
+            colItemCode.FieldName = "ItemCode";
+            colItemCode.Name = "colItemCode";
+            colItemCode.Visible = true;
+            colItemCode.VisibleIndex = 0;
+            colItemCode.Width = 161;
+            // 
+            // colItemName
+            // 
+            colItemName.Caption = "Malzeme Adı";
+            colItemName.FieldName = "ItemName";
+            colItemName.Name = "colItemName";
+            colItemName.Visible = true;
+            colItemName.VisibleIndex = 1;
+            colItemName.Width = 517;
+            // 
+            // colQuantity
+            // 
+            colQuantity.Caption = "Miktar";
+            colQuantity.DisplayFormat.FormatString = "N4";
+            colQuantity.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colQuantity.FieldName = "Quantity";
+            colQuantity.Name = "colQuantity";
+            colQuantity.Visible = true;
+            colQuantity.VisibleIndex = 2;
+            colQuantity.Width = 163;
+            // 
+            // colUnitCode
+            // 
+            colUnitCode.Caption = "Birim";
+            colUnitCode.FieldName = "UnitCode";
+            colUnitCode.Name = "colUnitCode";
+            colUnitCode.Visible = true;
+            colUnitCode.VisibleIndex = 3;
+            colUnitCode.Width = 163;
+            // 
+            // colUnitPrice
+            // 
+            colUnitPrice.Caption = "Birim Fiyat";
+            colUnitPrice.DisplayFormat.FormatString = "n2";
+            colUnitPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colUnitPrice.FieldName = "UnitPrice";
+            colUnitPrice.Name = "colUnitPrice";
+            colUnitPrice.Visible = true;
+            colUnitPrice.VisibleIndex = 4;
+            colUnitPrice.Width = 163;
+            // 
+            // colTaxRate
+            // 
+            colTaxRate.Caption = "Kdv Oranı";
+            colTaxRate.DisplayFormat.FormatString = "n0";
+            colTaxRate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colTaxRate.FieldName = "TaxRate";
+            colTaxRate.Name = "colTaxRate";
+            colTaxRate.Visible = true;
+            colTaxRate.VisibleIndex = 6;
+            colTaxRate.Width = 135;
+            // 
+            // colLineTotal
+            // 
+            colLineTotal.Caption = "Satır Toplam";
+            colLineTotal.DisplayFormat.FormatString = "n2";
+            colLineTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colLineTotal.FieldName = "LineTotal";
+            colLineTotal.Name = "colLineTotal";
+            colLineTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] { new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum) });
+            colLineTotal.Visible = true;
+            colLineTotal.VisibleIndex = 7;
+            colLineTotal.Width = 156;
             // 
             // panelControl2
             // 
@@ -81,7 +165,7 @@
             panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             panelControl2.Location = new System.Drawing.Point(2, 2);
             panelControl2.Name = "panelControl2";
-            panelControl2.Size = new System.Drawing.Size(541, 73);
+            panelControl2.Size = new System.Drawing.Size(1095, 73);
             panelControl2.TabIndex = 0;
             // 
             // buttonEditCustomer
@@ -101,23 +185,23 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Cari Hesap";
             // 
-            // tileControl1
+            // tileControlItems
             // 
-            tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            tileControl1.Location = new System.Drawing.Point(545, 0);
-            tileControl1.Name = "tileControl1";
-            tileControl1.Size = new System.Drawing.Size(580, 729);
-            tileControl1.TabIndex = 1;
-            tileControl1.Text = "tileControl1";
+            tileControlItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            tileControlItems.Location = new System.Drawing.Point(1099, 0);
+            tileControlItems.Name = "tileControlItems";
+            tileControlItems.Size = new System.Drawing.Size(412, 768);
+            tileControlItems.TabIndex = 1;
+            tileControlItems.Text = "tileControl1";
             // 
             // panelControl3
             // 
             panelControl3.Controls.Add(simpleButton2);
-            panelControl3.Controls.Add(simpleButton1);
+            panelControl3.Controls.Add(simpleButtonPayment);
             panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panelControl3.Location = new System.Drawing.Point(545, 677);
+            panelControl3.Location = new System.Drawing.Point(1099, 716);
             panelControl3.Name = "panelControl3";
-            panelControl3.Size = new System.Drawing.Size(580, 52);
+            panelControl3.Size = new System.Drawing.Size(412, 52);
             panelControl3.TabIndex = 2;
             // 
             // simpleButton2
@@ -128,28 +212,38 @@
             simpleButton2.TabIndex = 1;
             simpleButton2.Text = "Vageç";
             // 
-            // simpleButton1
+            // simpleButtonPayment
             // 
-            simpleButton1.Location = new System.Drawing.Point(6, 5);
-            simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new System.Drawing.Size(100, 40);
-            simpleButton1.TabIndex = 0;
-            simpleButton1.Text = "Kaydet";
-            simpleButton1.Click += simpleButton1_Click;
+            simpleButtonPayment.Location = new System.Drawing.Point(6, 5);
+            simpleButtonPayment.Name = "simpleButtonPayment";
+            simpleButtonPayment.Size = new System.Drawing.Size(100, 40);
+            simpleButtonPayment.TabIndex = 0;
+            simpleButtonPayment.Text = "Ödeme";
+            simpleButtonPayment.Click += simpleButtonPayment_Click;
+            // 
+            // colCurrency
+            // 
+            colCurrency.Caption = "Döviz Türü";
+            colCurrency.FieldName = "Currency";
+            colCurrency.Name = "colCurrency";
+            colCurrency.Visible = true;
+            colCurrency.VisibleIndex = 5;
+            colCurrency.Width = 157;
             // 
             // QuickSaleView
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             Controls.Add(panelControl3);
-            Controls.Add(tileControl1);
+            Controls.Add(tileControlItems);
             Controls.Add(panelControl1);
             Name = "QuickSaleView";
-            Size = new System.Drawing.Size(1125, 729);
+            Size = new System.Drawing.Size(1511, 768);
+            Load += QuickSaleView_Load;
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridControlLine).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewLine).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).EndInit();
             panelControl2.ResumeLayout(false);
             panelControl2.PerformLayout();
@@ -162,14 +256,22 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControlLine;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewLine;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.TileControl tileControl1;
+        private DevExpress.XtraEditors.TileControl tileControlItems;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonPayment;
         private DevExpress.XtraEditors.ButtonEdit buttonEditCustomer;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemName;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colLineTotal;
+        private DevExpress.XtraGrid.Columns.GridColumn colTaxRate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCurrency;
     }
 }

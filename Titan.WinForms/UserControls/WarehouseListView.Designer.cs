@@ -85,6 +85,7 @@
             barButtonItemAdd.Caption = "Yeni";
             barButtonItemAdd.Id = 0;
             barButtonItemAdd.Name = "barButtonItemAdd";
+            barButtonItemAdd.ItemClick += barButtonItemAdd_ItemClick;
             // 
             // barButtonItemEdit
             // 
@@ -103,6 +104,7 @@
             barButtonItemRefresh.Caption = "Yenile";
             barButtonItemRefresh.Id = 3;
             barButtonItemRefresh.Name = "barButtonItemRefresh";
+            barButtonItemRefresh.ItemClick += barButtonItemRefresh_ItemClick;
             // 
             // bar3
             // 
@@ -167,65 +169,75 @@
             // 
             // gridViewWarehouse
             // 
-            gridViewWarehouse.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCode, colName, colAddress, colActive, colDeleted, colCreatedOnUtc, colUpdatedOnUtc, colId });
+            gridViewWarehouse.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colAddress, colActive, colDeleted, colCreatedOnUtc, colUpdatedOnUtc });
             gridViewWarehouse.GridControl = gridControlWarehouse;
             gridViewWarehouse.Name = "gridViewWarehouse";
+            gridViewWarehouse.OptionsView.ShowAutoFilterRow = true;
+            gridViewWarehouse.OptionsView.ShowGroupPanel = false;
             // 
             // colCode
             // 
             colCode.FieldName = "Code";
             colCode.Name = "colCode";
+            colCode.OptionsColumn.AllowEdit = false;
             colCode.Visible = true;
-            colCode.VisibleIndex = 0;
+            colCode.VisibleIndex = 1;
             // 
             // colName
             // 
             colName.FieldName = "Name";
             colName.Name = "colName";
+            colName.OptionsColumn.AllowEdit = false;
             colName.Visible = true;
-            colName.VisibleIndex = 1;
+            colName.VisibleIndex = 2;
             // 
             // colAddress
             // 
             colAddress.FieldName = "Address";
             colAddress.Name = "colAddress";
+            colAddress.OptionsColumn.AllowEdit = false;
             colAddress.Visible = true;
-            colAddress.VisibleIndex = 2;
+            colAddress.VisibleIndex = 3;
             // 
             // colActive
             // 
             colActive.FieldName = "Active";
             colActive.Name = "colActive";
+            colActive.OptionsColumn.AllowEdit = false;
             colActive.Visible = true;
-            colActive.VisibleIndex = 3;
+            colActive.VisibleIndex = 4;
             // 
             // colDeleted
             // 
             colDeleted.FieldName = "Deleted";
             colDeleted.Name = "colDeleted";
+            colDeleted.OptionsColumn.AllowEdit = false;
             colDeleted.Visible = true;
-            colDeleted.VisibleIndex = 4;
+            colDeleted.VisibleIndex = 5;
             // 
             // colCreatedOnUtc
             // 
             colCreatedOnUtc.FieldName = "CreatedOnUtc";
             colCreatedOnUtc.Name = "colCreatedOnUtc";
+            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
             colCreatedOnUtc.Visible = true;
-            colCreatedOnUtc.VisibleIndex = 5;
+            colCreatedOnUtc.VisibleIndex = 6;
             // 
             // colUpdatedOnUtc
             // 
             colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
             colUpdatedOnUtc.Name = "colUpdatedOnUtc";
+            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
             colUpdatedOnUtc.Visible = true;
-            colUpdatedOnUtc.VisibleIndex = 6;
+            colUpdatedOnUtc.VisibleIndex = 7;
             // 
             // colId
             // 
             colId.FieldName = "Id";
             colId.Name = "colId";
+            colId.OptionsColumn.AllowEdit = false;
             colId.Visible = true;
-            colId.VisibleIndex = 7;
+            colId.VisibleIndex = 0;
             // 
             // WarehouseListView
             // 

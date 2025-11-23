@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Titan.Data;
 
@@ -11,9 +12,11 @@ using Titan.Data;
 namespace Titan.Data.Migrations
 {
     [DbContext(typeof(TitanContext))]
-    partial class TitanContextModelSnapshot : ModelSnapshot
+    [Migration("20251123175651_EditStockTrans")]
+    partial class EditStockTrans
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

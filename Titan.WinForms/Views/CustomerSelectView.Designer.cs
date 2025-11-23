@@ -31,16 +31,19 @@
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             simpleButtonSelect = new DevExpress.XtraEditors.SimpleButton();
             simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
-            gridControlCustomer = new DevExpress.XtraGrid.GridControl();
             pLinqInstantFeedbackSource = new DevExpress.Data.PLinq.PLinqInstantFeedbackSource();
+            gridControlCustomer = new DevExpress.XtraGrid.GridControl();
             gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colId = new DevExpress.XtraGrid.Columns.GridColumn();
             colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colName = new DevExpress.XtraGrid.Columns.GridColumn();
             colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDebit = new DevExpress.XtraGrid.Columns.GridColumn();
+            colCredit = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBalance = new DevExpress.XtraGrid.Columns.GridColumn();
             colCreatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
             colUpdatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
-            colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControlCustomer).BeginInit();
@@ -79,6 +82,11 @@
             simpleButtonCancel.Text = "Vazgeç";
             simpleButtonCancel.Click += simpleButtonCancel_Click;
             // 
+            // pLinqInstantFeedbackSource
+            // 
+            pLinqInstantFeedbackSource.DefaultSorting = "Code ASC";
+            pLinqInstantFeedbackSource.DesignTimeElementType = typeof(Core.Domain.Entities.Customer);
+            // 
             // gridControlCustomer
             // 
             gridControlCustomer.DataSource = pLinqInstantFeedbackSource;
@@ -87,67 +95,17 @@
             gridControlCustomer.MainView = gridViewCustomer;
             gridControlCustomer.Name = "gridControlCustomer";
             gridControlCustomer.Size = new System.Drawing.Size(991, 503);
-            gridControlCustomer.TabIndex = 1;
+            gridControlCustomer.TabIndex = 5;
             gridControlCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewCustomer });
-            // 
-            // pLinqInstantFeedbackSource
-            // 
-            pLinqInstantFeedbackSource.DefaultSorting = "Code ASC";
-            pLinqInstantFeedbackSource.DesignTimeElementType = typeof(Core.Domain.Entities.Customer);
             // 
             // gridViewCustomer
             // 
-            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colActive, colDeleted, colCreatedOnUtc, colUpdatedOnUtc });
+            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colActive, colDeleted, colDebit, colCredit, colBalance, colCreatedOnUtc, colUpdatedOnUtc });
             gridViewCustomer.GridControl = gridControlCustomer;
             gridViewCustomer.Name = "gridViewCustomer";
-            // 
-            // colCode
-            // 
-            colCode.FieldName = "Code";
-            colCode.Name = "colCode";
-            colCode.OptionsColumn.AllowEdit = false;
-            colCode.Visible = true;
-            colCode.VisibleIndex = 1;
-            // 
-            // colName
-            // 
-            colName.FieldName = "Name";
-            colName.Name = "colName";
-            colName.OptionsColumn.AllowEdit = false;
-            colName.Visible = true;
-            colName.VisibleIndex = 2;
-            // 
-            // colActive
-            // 
-            colActive.FieldName = "Active";
-            colActive.Name = "colActive";
-            colActive.OptionsColumn.AllowEdit = false;
-            colActive.Visible = true;
-            colActive.VisibleIndex = 3;
-            // 
-            // colDeleted
-            // 
-            colDeleted.FieldName = "Deleted";
-            colDeleted.Name = "colDeleted";
-            colDeleted.OptionsColumn.AllowEdit = false;
-            colDeleted.Visible = true;
-            colDeleted.VisibleIndex = 4;
-            // 
-            // colCreatedOnUtc
-            // 
-            colCreatedOnUtc.FieldName = "CreatedOnUtc";
-            colCreatedOnUtc.Name = "colCreatedOnUtc";
-            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
-            colCreatedOnUtc.Visible = true;
-            colCreatedOnUtc.VisibleIndex = 5;
-            // 
-            // colUpdatedOnUtc
-            // 
-            colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
-            colUpdatedOnUtc.Name = "colUpdatedOnUtc";
-            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
-            colUpdatedOnUtc.Visible = true;
-            colUpdatedOnUtc.VisibleIndex = 6;
+            gridViewCustomer.OptionsView.ShowAutoFilterRow = true;
+            gridViewCustomer.OptionsView.ShowGroupPanel = false;
+            gridViewCustomer.DoubleClick += gridViewCustomer_DoubleClick;
             // 
             // colId
             // 
@@ -156,6 +114,94 @@
             colId.OptionsColumn.AllowEdit = false;
             colId.Visible = true;
             colId.VisibleIndex = 0;
+            // 
+            // colCode
+            // 
+            colCode.Caption = "Kod";
+            colCode.FieldName = "Code";
+            colCode.Name = "colCode";
+            colCode.OptionsColumn.AllowEdit = false;
+            colCode.Visible = true;
+            colCode.VisibleIndex = 1;
+            // 
+            // colName
+            // 
+            colName.Caption = "Cari Ünvan";
+            colName.FieldName = "Name";
+            colName.Name = "colName";
+            colName.OptionsColumn.AllowEdit = false;
+            colName.Visible = true;
+            colName.VisibleIndex = 2;
+            colName.Width = 300;
+            // 
+            // colActive
+            // 
+            colActive.Caption = "Aktif";
+            colActive.FieldName = "Active";
+            colActive.Name = "colActive";
+            colActive.OptionsColumn.AllowEdit = false;
+            colActive.Visible = true;
+            colActive.VisibleIndex = 3;
+            // 
+            // colDeleted
+            // 
+            colDeleted.Caption = "Silindi";
+            colDeleted.FieldName = "Deleted";
+            colDeleted.Name = "colDeleted";
+            colDeleted.OptionsColumn.AllowEdit = false;
+            colDeleted.Visible = true;
+            colDeleted.VisibleIndex = 4;
+            // 
+            // colDebit
+            // 
+            colDebit.Caption = "Borç";
+            colDebit.DisplayFormat.FormatString = "n2";
+            colDebit.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colDebit.FieldName = "Debit";
+            colDebit.Name = "colDebit";
+            colDebit.OptionsColumn.AllowEdit = false;
+            colDebit.Visible = true;
+            colDebit.VisibleIndex = 5;
+            // 
+            // colCredit
+            // 
+            colCredit.Caption = "Alacak";
+            colCredit.DisplayFormat.FormatString = "n2";
+            colCredit.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colCredit.FieldName = "Credit";
+            colCredit.Name = "colCredit";
+            colCredit.OptionsColumn.AllowEdit = false;
+            colCredit.Visible = true;
+            colCredit.VisibleIndex = 6;
+            // 
+            // colBalance
+            // 
+            colBalance.Caption = "Bakiye";
+            colBalance.DisplayFormat.FormatString = "n2";
+            colBalance.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colBalance.FieldName = "Balance";
+            colBalance.Name = "colBalance";
+            colBalance.OptionsColumn.AllowEdit = false;
+            colBalance.Visible = true;
+            colBalance.VisibleIndex = 7;
+            // 
+            // colCreatedOnUtc
+            // 
+            colCreatedOnUtc.Caption = "Kayıt Tarihi";
+            colCreatedOnUtc.FieldName = "CreatedOnUtc";
+            colCreatedOnUtc.Name = "colCreatedOnUtc";
+            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
+            colCreatedOnUtc.Visible = true;
+            colCreatedOnUtc.VisibleIndex = 8;
+            // 
+            // colUpdatedOnUtc
+            // 
+            colUpdatedOnUtc.Caption = "Güncellenme Tarihi";
+            colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
+            colUpdatedOnUtc.Name = "colUpdatedOnUtc";
+            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
+            colUpdatedOnUtc.Visible = true;
+            colUpdatedOnUtc.VisibleIndex = 9;
             // 
             // CustomerSelectView
             // 
@@ -177,9 +223,11 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.Data.PLinq.PLinqInstantFeedbackSource pLinqInstantFeedbackSource;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSelect;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
         private DevExpress.XtraGrid.GridControl gridControlCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCustomer;
-        private DevExpress.Data.PLinq.PLinqInstantFeedbackSource pLinqInstantFeedbackSource;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
@@ -187,7 +235,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedOnUtc;
         private DevExpress.XtraGrid.Columns.GridColumn colUpdatedOnUtc;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonSelect;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
+        private DevExpress.XtraGrid.Columns.GridColumn colDebit;
+        private DevExpress.XtraGrid.Columns.GridColumn colCredit;
+        private DevExpress.XtraGrid.Columns.GridColumn colBalance;
     }
 }

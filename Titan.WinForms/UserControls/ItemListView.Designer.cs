@@ -44,12 +44,13 @@
             gridControlItem = new DevExpress.XtraGrid.GridControl();
             pLinqInstantFeedbackSource = new DevExpress.Data.PLinq.PLinqInstantFeedbackSource();
             gridViewItem = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colId = new DevExpress.XtraGrid.Columns.GridColumn();
             colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colStock = new DevExpress.XtraGrid.Columns.GridColumn();
             colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             colCreatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
             colUpdatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
-            colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)barManager).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControlItem).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewItem).BeginInit();
@@ -173,55 +174,77 @@
             // pLinqInstantFeedbackSource
             // 
             pLinqInstantFeedbackSource.DefaultSorting = "Code ASC";
-            pLinqInstantFeedbackSource.DesignTimeElementType = typeof(Titan.Core.Domain.Entities.Item);
+            pLinqInstantFeedbackSource.DesignTimeElementType = typeof(Core.Domain.Entities.Item);
             // 
             // gridViewItem
             // 
-            gridViewItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCode, colName, colActive, colCreatedOnUtc, colUpdatedOnUtc, colId });
+            gridViewItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colStock, colActive, colCreatedOnUtc, colUpdatedOnUtc });
             gridViewItem.GridControl = gridControlItem;
             gridViewItem.Name = "gridViewItem";
-            // 
-            // colCode
-            // 
-            colCode.FieldName = "Code";
-            colCode.Name = "colCode";
-            colCode.Visible = true;
-            colCode.VisibleIndex = 1;
-            // 
-            // colName
-            // 
-            colName.FieldName = "Name";
-            colName.Name = "colName";
-            colName.Visible = true;
-            colName.VisibleIndex = 2;
-            // 
-            // colActive
-            // 
-            colActive.FieldName = "Active";
-            colActive.Name = "colActive";
-            colActive.Visible = true;
-            colActive.VisibleIndex = 3;
-            // 
-            // colCreatedOnUtc
-            // 
-            colCreatedOnUtc.FieldName = "CreatedOnUtc";
-            colCreatedOnUtc.Name = "colCreatedOnUtc";
-            colCreatedOnUtc.Visible = true;
-            colCreatedOnUtc.VisibleIndex = 4;
-            // 
-            // colUpdatedOnUtc
-            // 
-            colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
-            colUpdatedOnUtc.Name = "colUpdatedOnUtc";
-            colUpdatedOnUtc.Visible = true;
-            colUpdatedOnUtc.VisibleIndex = 5;
+            gridViewItem.OptionsView.ShowAutoFilterRow = true;
+            gridViewItem.OptionsView.ShowGroupPanel = false;
             // 
             // colId
             // 
             colId.FieldName = "Id";
             colId.Name = "colId";
+            colId.OptionsColumn.AllowEdit = false;
             colId.Visible = true;
             colId.VisibleIndex = 0;
+            // 
+            // colCode
+            // 
+            colCode.Caption = "Kod";
+            colCode.FieldName = "Code";
+            colCode.Name = "colCode";
+            colCode.OptionsColumn.AllowEdit = false;
+            colCode.Visible = true;
+            colCode.VisibleIndex = 1;
+            // 
+            // colName
+            // 
+            colName.Caption = "Ad";
+            colName.FieldName = "Name";
+            colName.Name = "colName";
+            colName.OptionsColumn.AllowEdit = false;
+            colName.Visible = true;
+            colName.VisibleIndex = 2;
+            // 
+            // colStock
+            // 
+            colStock.Caption = "Stok";
+            colStock.FieldName = "Stock";
+            colStock.Name = "colStock";
+            colStock.OptionsColumn.AllowEdit = false;
+            colStock.Visible = true;
+            colStock.VisibleIndex = 3;
+            // 
+            // colActive
+            // 
+            colActive.Caption = "Aktif";
+            colActive.FieldName = "Active";
+            colActive.Name = "colActive";
+            colActive.OptionsColumn.AllowEdit = false;
+            colActive.Visible = true;
+            colActive.VisibleIndex = 4;
+            // 
+            // colCreatedOnUtc
+            // 
+            colCreatedOnUtc.Caption = "Kayıt Tarihi";
+            colCreatedOnUtc.FieldName = "CreatedOnUtc";
+            colCreatedOnUtc.Name = "colCreatedOnUtc";
+            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
+            colCreatedOnUtc.Visible = true;
+            colCreatedOnUtc.VisibleIndex = 5;
+            // 
+            // colUpdatedOnUtc
+            // 
+            colUpdatedOnUtc.Caption = "Güncellenme Tarihi";
+            colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
+            colUpdatedOnUtc.Name = "colUpdatedOnUtc";
+            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
+            colUpdatedOnUtc.Visible = true;
+            colUpdatedOnUtc.VisibleIndex = 6;
             // 
             // ItemListView
             // 
@@ -264,5 +287,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedOnUtc;
         private DevExpress.XtraGrid.Columns.GridColumn colUpdatedOnUtc;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colStock;
     }
 }

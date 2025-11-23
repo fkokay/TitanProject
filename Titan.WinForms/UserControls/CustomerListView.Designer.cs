@@ -50,6 +50,9 @@
             colCreatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
             colUpdatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
             colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)barManager).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControlCustomer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewCustomer).BeginInit();
@@ -167,60 +170,108 @@
             // 
             // gridViewCustomer
             // 
-            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCode, colName, colActive, colDeleted, colCreatedOnUtc, colUpdatedOnUtc, colId });
+            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCode, colName, colActive, colDeleted, colCreatedOnUtc, colUpdatedOnUtc, colId, gridColumn1, gridColumn2, gridColumn3 });
             gridViewCustomer.GridControl = gridControlCustomer;
             gridViewCustomer.Name = "gridViewCustomer";
             gridViewCustomer.OptionsView.ShowAutoFilterRow = true;
             gridViewCustomer.OptionsView.ShowGroupPanel = false;
+            gridViewCustomer.RowCellStyle += gridViewCustomer_RowCellStyle;
             // 
             // colCode
             // 
+            colCode.Caption = "Kod";
             colCode.FieldName = "Code";
             colCode.Name = "colCode";
+            colCode.OptionsColumn.AllowEdit = false;
             colCode.Visible = true;
             colCode.VisibleIndex = 1;
             // 
             // colName
             // 
+            colName.Caption = "Cari Ünvan";
             colName.FieldName = "Name";
             colName.Name = "colName";
+            colName.OptionsColumn.AllowEdit = false;
             colName.Visible = true;
             colName.VisibleIndex = 2;
+            colName.Width = 300;
             // 
             // colActive
             // 
+            colActive.Caption = "Aktif";
             colActive.FieldName = "Active";
             colActive.Name = "colActive";
+            colActive.OptionsColumn.AllowEdit = false;
             colActive.Visible = true;
             colActive.VisibleIndex = 3;
             // 
             // colDeleted
             // 
+            colDeleted.Caption = "Silindi";
             colDeleted.FieldName = "Deleted";
             colDeleted.Name = "colDeleted";
+            colDeleted.OptionsColumn.AllowEdit = false;
             colDeleted.Visible = true;
             colDeleted.VisibleIndex = 4;
             // 
             // colCreatedOnUtc
             // 
+            colCreatedOnUtc.Caption = "Kayıt Tarihi";
             colCreatedOnUtc.FieldName = "CreatedOnUtc";
             colCreatedOnUtc.Name = "colCreatedOnUtc";
+            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
             colCreatedOnUtc.Visible = true;
-            colCreatedOnUtc.VisibleIndex = 5;
+            colCreatedOnUtc.VisibleIndex = 8;
             // 
             // colUpdatedOnUtc
             // 
+            colUpdatedOnUtc.Caption = "Güncellenme Tarihi";
             colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
             colUpdatedOnUtc.Name = "colUpdatedOnUtc";
+            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
             colUpdatedOnUtc.Visible = true;
-            colUpdatedOnUtc.VisibleIndex = 6;
+            colUpdatedOnUtc.VisibleIndex = 9;
             // 
             // colId
             // 
             colId.FieldName = "Id";
             colId.Name = "colId";
+            colId.OptionsColumn.AllowEdit = false;
             colId.Visible = true;
             colId.VisibleIndex = 0;
+            // 
+            // gridColumn1
+            // 
+            gridColumn1.Caption = "Borç";
+            gridColumn1.DisplayFormat.FormatString = "n2";
+            gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn1.FieldName = "Debit";
+            gridColumn1.Name = "gridColumn1";
+            gridColumn1.OptionsColumn.AllowEdit = false;
+            gridColumn1.Visible = true;
+            gridColumn1.VisibleIndex = 5;
+            // 
+            // gridColumn2
+            // 
+            gridColumn2.Caption = "Alacak";
+            gridColumn2.DisplayFormat.FormatString = "n2";
+            gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn2.FieldName = "Credit";
+            gridColumn2.Name = "gridColumn2";
+            gridColumn2.OptionsColumn.AllowEdit = false;
+            gridColumn2.Visible = true;
+            gridColumn2.VisibleIndex = 6;
+            // 
+            // gridColumn3
+            // 
+            gridColumn3.Caption = "Bakiye";
+            gridColumn3.DisplayFormat.FormatString = "n2";
+            gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn3.FieldName = "Balance";
+            gridColumn3.Name = "gridColumn3";
+            gridColumn3.OptionsColumn.AllowEdit = false;
+            gridColumn3.Visible = true;
+            gridColumn3.VisibleIndex = 7;
             // 
             // CustomerListView
             // 
@@ -263,5 +314,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedOnUtc;
         private DevExpress.XtraGrid.Columns.GridColumn colUpdatedOnUtc;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

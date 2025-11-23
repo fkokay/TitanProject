@@ -60,6 +60,10 @@ namespace Titan.WinForms
                     services.AddScoped<WarehouseListView>();
                     services.AddScoped<WarehouseView>();
                     services.AddScoped<QuickSaleView>();
+                    services.AddScoped<CustomerTransactionListView>();
+                    services.AddScoped<StockTransactionListView>();
+                    services.AddScoped<InvoiceListView>();
+                    services.AddScoped<InvoiceView>();
                 });
         }
     }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using Titan.Data;
 using Titan.WinForms.UserControls;
+using Titan.WinForms.Views;
 
 namespace Titan.WinForms
 {
@@ -66,6 +67,57 @@ namespace Titan.WinForms
 
             panelMain.Controls.Clear();
             var view = _serviceProvider.GetRequiredService<QuickSaleView>();
+            view.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(view);
+        }
+
+        private void barButtonItemUnit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            panelMain.Controls.Clear();
+            var view = _serviceProvider.GetRequiredService<UnitListView>();
+            view.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(view);
+        }
+
+        private void barButtonItemCustomerAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var view = _serviceProvider.GetRequiredService<CustomerView>();
+            if (view.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void barButtonItemWarehouseAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var view = _serviceProvider.GetRequiredService<WarehouseView>();
+            if (view.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void barButtonItemCurrency_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            panelMain.Controls.Clear();
+            var view = _serviceProvider.GetRequiredService<CurrencyListView>();
+            view.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(view);
+        }
+
+        private void barButtonItemCustomerTransaction_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            panelMain.Controls.Clear();
+            var view = _serviceProvider.GetRequiredService<CustomerTransactionListView>();
+            view.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(view);
+        }
+
+        private void barButtonItemSalesInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            panelMain.Controls.Clear();
+            var view = _serviceProvider.GetRequiredService<InvoiceListView>();
+            view.InvoiceType = Core.Domain.Enums.InvoiceType.Sales;
             view.Dock = DockStyle.Fill;
             panelMain.Controls.Add(view);
         }

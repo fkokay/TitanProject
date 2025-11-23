@@ -26,10 +26,10 @@ namespace Titan.Core.Domain.Entities
         public TransactionSourceType SourceType { get; set; } = TransactionSourceType.Unknown;
         public int? SourceId { get; set; }
         public string UUID { get; set; }
-        public string EInvoiceStatusMessage { get; set; }
-        public DateTime CreatedOnUtc { get; set; }
-        public DateTime UpdatedOnUtc { get; set; }
+        public string EInvoiceStatusMessage { get; set; } = String.Empty;
+        public DateTime CreatedOnUtc { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedOnUtc { get; set; } = DateTime.UtcNow;
 
-        public ICollection<InvoiceLine> Lines { get; set; }
+        public ICollection<InvoiceLine> Lines { get; set; } = new List<InvoiceLine>();
     }
 }

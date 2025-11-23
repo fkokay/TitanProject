@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,18 @@ namespace Titan.Core.Domain.Entities
     {
         public string Code { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
+        [NotMapped]
+        public decimal Debit { get; set; }
+        [NotMapped]
+        public decimal Credit { get; set; }
+        [NotMapped]
+        public decimal Balance
+        {
+            get
+            {
+                return Debit - Credit;
+            }
+        }
         public byte Active { get; set; } = 1;
         public bool Deleted { get; set; } = false;
         public DateTime CreatedOnUtc { get; set; } = DateTime.UtcNow;
