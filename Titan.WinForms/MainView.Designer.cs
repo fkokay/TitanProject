@@ -55,7 +55,7 @@
             barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItemQuikSale = new DevExpress.XtraBars.BarButtonItem();
             ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -85,7 +85,7 @@
             // ribbonControl1
             // 
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItemCustomerList, barButtonItem2, barButtonItem3, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItemItem, barButtonItem1, barButtonItem10, barButtonItemWarehouse, barButtonItem12, barButtonItem13, barButtonItem14, barButtonItem15, barButtonItem16, barButtonItem17, barButtonItem18, barButtonItem19, barButtonItem20, barButtonItem21, barButtonItem22, barButtonItem23, barButtonItem24 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItemCustomerList, barButtonItem2, barButtonItem3, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItemItem, barButtonItem1, barButtonItem10, barButtonItemWarehouse, barButtonItem12, barButtonItem13, barButtonItem14, barButtonItem15, barButtonItem16, barButtonItem17, barButtonItem18, barButtonItem19, barButtonItem20, barButtonItem21, barButtonItem22, barButtonItem23, barButtonItemQuikSale });
             ribbonControl1.Location = new System.Drawing.Point(0, 0);
             ribbonControl1.MaxItemId = 27;
             ribbonControl1.Name = "ribbonControl1";
@@ -245,11 +245,12 @@
             barButtonItem23.Id = 25;
             barButtonItem23.Name = "barButtonItem23";
             // 
-            // barButtonItem24
+            // barButtonItemQuikSale
             // 
-            barButtonItem24.Caption = "Hızlı Satış";
-            barButtonItem24.Id = 26;
-            barButtonItem24.Name = "barButtonItem24";
+            barButtonItemQuikSale.Caption = "Hızlı Satış";
+            barButtonItemQuikSale.Id = 26;
+            barButtonItemQuikSale.Name = "barButtonItemQuikSale";
+            barButtonItemQuikSale.ItemClick += barButtonItemQuikSale_ItemClick;
             // 
             // ribbonPageHome
             // 
@@ -259,7 +260,7 @@
             // 
             // ribbonPageGroup1
             // 
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem24);
+            ribbonPageGroup1.ItemLinks.Add(barButtonItemQuikSale);
             ribbonPageGroup1.Name = "ribbonPageGroup1";
             ribbonPageGroup1.Text = "Hızlı İşlemler";
             // 
@@ -401,7 +402,9 @@
             Controls.Add(ribbonControl1);
             Name = "MainView";
             Ribbon = ribbonControl1;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MainView";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)mvvmContext1).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelMain).EndInit();
@@ -456,7 +459,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem24;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemQuikSale;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;

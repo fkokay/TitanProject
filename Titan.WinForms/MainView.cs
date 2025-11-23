@@ -60,5 +60,14 @@ namespace Titan.WinForms
             view.Dock = DockStyle.Fill;
             panelMain.Controls.Add(view);
         }
+
+        private void barButtonItemQuikSale_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            panelMain.Controls.Clear();
+            var view = _serviceProvider.GetRequiredService<QuickSaleView>();
+            view.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(view);
+        }
     }
 }

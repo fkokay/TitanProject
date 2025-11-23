@@ -17,7 +17,7 @@ namespace Titan.WinForms
 
         public MainViewModel()
         {
-            Title = "Ribbon Based Application (MVVM)";
+            Title = "Titan ERP";
         }
 
         public async Task OnCreate()

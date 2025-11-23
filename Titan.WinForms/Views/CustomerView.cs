@@ -25,19 +25,26 @@ namespace Titan.WinForms.Views
 
         private async void simpleButtonSave_Click(object sender, EventArgs e)
         {
-            var customer = new Customer
+            try
             {
-                Code = textEditCode.Text,
-                Name = textEditName.Text,
-                Active = 1
-            };
+                var customer = new Customer
+                {
+                    Code = textEditCode.Text,
+                    Name = textEditName.Text,
+                    Active = 1
+                };
 
-            _context.Customers.Add(customer);
-            await _context.SaveChangesAsync();
+                _context.Customers.Add(customer);
+                await _context.SaveChangesAsync();
 
-            XtraMessageBox.Show("Kayıt başarıyla oluşturuldu.");
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                XtraMessageBox.Show("Kayıt başarıyla oluşturuldu.");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
 
         private void simpleButtonCancel_Click(object sender, EventArgs e)
