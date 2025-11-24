@@ -71,7 +71,7 @@ namespace Titan.WinForms.Views
 
         private void gridViewCustomer_DoubleClick(object sender, EventArgs e)
         {
-            if (gridViewCustomer.GetFocusedRow()  == null)
+            if (gridViewCustomer.GetFocusedRow() == null)
             {
                 return;
             }
@@ -80,6 +80,27 @@ namespace Titan.WinForms.Views
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void gridViewCustomer_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName != "Balance")
+                return;  // sadece Balance sütununu renklendir
+
+            var value = gridViewCustomer.GetRowCellValue(e.RowHandle, "Balance");
+
+            if (value is DevExpress.Data.NotLoadedObject)
+                return;
+
+            if (value == null || value == DBNull.Value)
+                return;
+
+            decimal balance = Convert.ToDecimal(value);
+
+            if (balance > 0)
+                e.Appearance.ForeColor = Color.Red;   // borç
+            else if (balance < 0)
+                e.Appearance.ForeColor = Color.Green; // alacak
         }
     }
 }

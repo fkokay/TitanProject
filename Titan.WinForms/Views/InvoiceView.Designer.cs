@@ -28,18 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
+            gridControlLine = new DevExpress.XtraGrid.GridControl();
+            gridViewLine = new DevExpress.XtraGrid.Views.Grid.GridView();
+            panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
+            panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridControlLine).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewLine).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl2).BeginInit();
             SuspendLayout();
+            // 
+            // panelControl1
+            // 
+            panelControl1.Controls.Add(simpleButtonCancel);
+            panelControl1.Controls.Add(simpleButtonSave);
+            panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            panelControl1.Location = new System.Drawing.Point(0, 608);
+            panelControl1.Name = "panelControl1";
+            panelControl1.Size = new System.Drawing.Size(1021, 48);
+            panelControl1.TabIndex = 2;
+            // 
+            // simpleButtonCancel
+            // 
+            simpleButtonCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+            simpleButtonCancel.Appearance.Options.UseBackColor = true;
+            simpleButtonCancel.Location = new System.Drawing.Point(93, 13);
+            simpleButtonCancel.Name = "simpleButtonCancel";
+            simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
+            simpleButtonCancel.TabIndex = 1;
+            simpleButtonCancel.Text = "Vazgeç";
+            // 
+            // simpleButtonSave
+            // 
+            simpleButtonSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            simpleButtonSave.Appearance.Options.UseBackColor = true;
+            simpleButtonSave.Location = new System.Drawing.Point(12, 13);
+            simpleButtonSave.Name = "simpleButtonSave";
+            simpleButtonSave.Size = new System.Drawing.Size(75, 23);
+            simpleButtonSave.TabIndex = 0;
+            simpleButtonSave.Text = "Kaydet";
+            // 
+            // gridControlLine
+            // 
+            gridControlLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridControlLine.Location = new System.Drawing.Point(0, 167);
+            gridControlLine.MainView = gridViewLine;
+            gridControlLine.Name = "gridControlLine";
+            gridControlLine.Size = new System.Drawing.Size(1021, 441);
+            gridControlLine.TabIndex = 3;
+            gridControlLine.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewLine });
+            // 
+            // gridViewLine
+            // 
+            gridViewLine.GridControl = gridControlLine;
+            gridViewLine.Name = "gridViewLine";
+            // 
+            // panelControl2
+            // 
+            panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            panelControl2.Location = new System.Drawing.Point(0, 0);
+            panelControl2.Name = "panelControl2";
+            panelControl2.Size = new System.Drawing.Size(1021, 167);
+            panelControl2.TabIndex = 4;
             // 
             // InvoiceView
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1021, 656);
+            Controls.Add(gridControlLine);
+            Controls.Add(panelControl2);
+            Controls.Add(panelControl1);
             Name = "InvoiceView";
             Text = "InvoiceView";
+            ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
+            panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridControlLine).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewLine).EndInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSave;
+        private DevExpress.XtraGrid.GridControl gridControlLine;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewLine;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
     }
 }

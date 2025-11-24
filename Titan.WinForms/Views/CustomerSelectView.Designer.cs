@@ -105,6 +105,7 @@
             gridViewCustomer.Name = "gridViewCustomer";
             gridViewCustomer.OptionsView.ShowAutoFilterRow = true;
             gridViewCustomer.OptionsView.ShowGroupPanel = false;
+            gridViewCustomer.RowCellStyle += gridViewCustomer_RowCellStyle;
             gridViewCustomer.DoubleClick += gridViewCustomer_DoubleClick;
             // 
             // colId
