@@ -39,7 +39,7 @@ namespace Titan.WinForms
                 {
                     // Connection string
                     var connectionString =
-                        "Server=.;Database=TitanDb;Trusted_Connection=True;TrustServerCertificate=True;";
+                        "Server=DESKTOP-QUF2ORT;Database=TitanDb;Trusted_Connection=True;TrustServerCertificate=True;";
 
                     // DbContext
                     services.AddDbContext<TitanContext>(options =>

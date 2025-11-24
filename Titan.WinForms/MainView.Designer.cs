@@ -61,6 +61,10 @@
             barButtonItemCurrency = new DevExpress.XtraBars.BarButtonItem();
             barButtonItemSalesInvoice = new DevExpress.XtraBars.BarButtonItem();
             barButtonItemSalesReturnInvoice = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -74,7 +78,9 @@
             ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -83,12 +89,6 @@
             ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(components);
             panelMain = new DevExpress.XtraEditors.PanelControl();
-            ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mvvmContext1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelMain).BeginInit();
@@ -138,18 +138,27 @@
             // 
             barButtonItem4.Caption = "Ekstre";
             barButtonItem4.Id = 4;
+            barButtonItem4.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem4.ImageOptions.Image");
+            barButtonItem4.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem4.ImageOptions.LargeImage");
+            barButtonItem4.LargeWidth = 100;
             barButtonItem4.Name = "barButtonItem4";
             // 
             // barButtonItem5
             // 
             barButtonItem5.Caption = "Tahsilat / Ödeme";
             barButtonItem5.Id = 5;
+            barButtonItem5.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem5.ImageOptions.Image");
+            barButtonItem5.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem5.ImageOptions.LargeImage");
+            barButtonItem5.LargeWidth = 100;
             barButtonItem5.Name = "barButtonItem5";
             // 
             // barButtonItem6
             // 
             barButtonItem6.Caption = "Cari Mutabakat";
             barButtonItem6.Id = 6;
+            barButtonItem6.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem6.ImageOptions.Image");
+            barButtonItem6.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem6.ImageOptions.LargeImage");
+            barButtonItem6.LargeWidth = 100;
             barButtonItem6.Name = "barButtonItem6";
             // 
             // barButtonItem7
@@ -298,6 +307,9 @@
             // 
             barButtonItemUnit.Caption = "Birimler";
             barButtonItemUnit.Id = 27;
+            barButtonItemUnit.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItemUnit.ImageOptions.Image");
+            barButtonItemUnit.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItemUnit.ImageOptions.LargeImage");
+            barButtonItemUnit.LargeWidth = 100;
             barButtonItemUnit.Name = "barButtonItemUnit";
             barButtonItemUnit.ItemClick += barButtonItemUnit_ItemClick;
             // 
@@ -305,6 +317,9 @@
             // 
             barButtonItemCurrency.Caption = "Dövizler";
             barButtonItemCurrency.Id = 29;
+            barButtonItemCurrency.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItemCurrency.ImageOptions.Image");
+            barButtonItemCurrency.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItemCurrency.ImageOptions.LargeImage");
+            barButtonItemCurrency.LargeWidth = 100;
             barButtonItemCurrency.Name = "barButtonItemCurrency";
             barButtonItemCurrency.ItemClick += barButtonItemCurrency_ItemClick;
             // 
@@ -312,6 +327,9 @@
             // 
             barButtonItemSalesInvoice.Caption = "Satış Faturaları";
             barButtonItemSalesInvoice.Id = 30;
+            barButtonItemSalesInvoice.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItemSalesInvoice.ImageOptions.Image");
+            barButtonItemSalesInvoice.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItemSalesInvoice.ImageOptions.LargeImage");
+            barButtonItemSalesInvoice.LargeWidth = 100;
             barButtonItemSalesInvoice.Name = "barButtonItemSalesInvoice";
             barButtonItemSalesInvoice.ItemClick += barButtonItemSalesInvoice_ItemClick;
             // 
@@ -319,7 +337,46 @@
             // 
             barButtonItemSalesReturnInvoice.Caption = "Satış İade Faturaları";
             barButtonItemSalesReturnInvoice.Id = 31;
+            barButtonItemSalesReturnInvoice.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItemSalesReturnInvoice.ImageOptions.Image");
+            barButtonItemSalesReturnInvoice.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItemSalesReturnInvoice.ImageOptions.LargeImage");
+            barButtonItemSalesReturnInvoice.LargeWidth = 100;
             barButtonItemSalesReturnInvoice.Name = "barButtonItemSalesReturnInvoice";
+            // 
+            // barButtonItem2
+            // 
+            barButtonItem2.Caption = "Yeni Satış Faturası";
+            barButtonItem2.Id = 32;
+            barButtonItem2.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem2.ImageOptions.Image");
+            barButtonItem2.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem2.ImageOptions.LargeImage");
+            barButtonItem2.LargeWidth = 100;
+            barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            barButtonItem3.Caption = "Yeni Alış Faturası";
+            barButtonItem3.Id = 33;
+            barButtonItem3.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem3.ImageOptions.Image");
+            barButtonItem3.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem3.ImageOptions.LargeImage");
+            barButtonItem3.LargeWidth = 100;
+            barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem11
+            // 
+            barButtonItem11.Caption = "Yeni Satış İadesi";
+            barButtonItem11.Id = 34;
+            barButtonItem11.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem11.ImageOptions.Image");
+            barButtonItem11.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem11.ImageOptions.LargeImage");
+            barButtonItem11.LargeWidth = 100;
+            barButtonItem11.Name = "barButtonItem11";
+            // 
+            // barButtonItem12
+            // 
+            barButtonItem12.Caption = "Yeni Alış İadesi";
+            barButtonItem12.Id = 35;
+            barButtonItem12.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem12.ImageOptions.Image");
+            barButtonItem12.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem12.ImageOptions.LargeImage");
+            barButtonItem12.LargeWidth = 100;
+            barButtonItem12.Name = "barButtonItem12";
             // 
             // ribbonPageHome
             // 
@@ -417,12 +474,26 @@
             ribbonPage3.Name = "ribbonPage3";
             ribbonPage3.Text = "Fatura İşlemleri";
             // 
+            // ribbonPageGroup14
+            // 
+            ribbonPageGroup14.ItemLinks.Add(barButtonItem2);
+            ribbonPageGroup14.ItemLinks.Add(barButtonItem3);
+            ribbonPageGroup14.ItemLinks.Add(barButtonItem11);
+            ribbonPageGroup14.ItemLinks.Add(barButtonItem12);
+            ribbonPageGroup14.Name = "ribbonPageGroup14";
+            ribbonPageGroup14.Text = "Kayıt İşlemleri";
+            // 
             // ribbonPageGroup4
             // 
             ribbonPageGroup4.ItemLinks.Add(barButtonItemSalesInvoice);
             ribbonPageGroup4.ItemLinks.Add(barButtonItemSalesReturnInvoice);
             ribbonPageGroup4.Name = "ribbonPageGroup4";
             ribbonPageGroup4.Text = "Listeleme";
+            // 
+            // ribbonPageGroup15
+            // 
+            ribbonPageGroup15.Name = "ribbonPageGroup15";
+            ribbonPageGroup15.Text = "Araçlar";
             // 
             // ribbonPage4
             // 
@@ -470,44 +541,6 @@
             panelMain.Name = "panelMain";
             panelMain.Size = new System.Drawing.Size(1306, 550);
             panelMain.TabIndex = 1;
-            // 
-            // ribbonPageGroup14
-            // 
-            ribbonPageGroup14.ItemLinks.Add(barButtonItem2);
-            ribbonPageGroup14.ItemLinks.Add(barButtonItem3);
-            ribbonPageGroup14.ItemLinks.Add(barButtonItem11);
-            ribbonPageGroup14.ItemLinks.Add(barButtonItem12);
-            ribbonPageGroup14.Name = "ribbonPageGroup14";
-            ribbonPageGroup14.Text = "Kayıt İşlemleri";
-            // 
-            // ribbonPageGroup15
-            // 
-            ribbonPageGroup15.Name = "ribbonPageGroup15";
-            ribbonPageGroup15.Text = "Araçlar";
-            // 
-            // barButtonItem2
-            // 
-            barButtonItem2.Caption = "Yeni Satış Faturası";
-            barButtonItem2.Id = 32;
-            barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem3
-            // 
-            barButtonItem3.Caption = "Yeni Alış Faturası";
-            barButtonItem3.Id = 33;
-            barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barButtonItem11
-            // 
-            barButtonItem11.Caption = "Yeni Satış İadesi";
-            barButtonItem11.Id = 34;
-            barButtonItem11.Name = "barButtonItem11";
-            // 
-            // barButtonItem12
-            // 
-            barButtonItem12.Caption = "Yeni Alış İadesi";
-            barButtonItem12.Id = 35;
-            barButtonItem12.Name = "barButtonItem12";
             // 
             // MainView
             // 
