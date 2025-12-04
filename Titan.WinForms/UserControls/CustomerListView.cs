@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +29,21 @@ namespace Titan.WinForms.UserControls
             _context = context;
             this.pLinqInstantFeedbackSource.GetEnumerable += PLinqInstantFeedbackSource_GetEnumerable; ;
             _provider = provider;
+
+            barButtonItemCustomerTransaction.ItemClick += BarButtonItemCustomerTransaction_ItemClick;
+        }
+
+        private void BarButtonItemCustomerTransaction_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var selectedCustomer = gridViewCustomer.GetFocusedRow() as Customer;
+            if (selectedCustomer == null) return;
+
+            var form = _provider.GetRequiredService<CustomerTransactionListModalView>();
+            form.SelectedCustomer = selectedCustomer;
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                pLinqInstantFeedbackSource.Refresh();
+            }
         }
 
         private void PLinqInstantFeedbackSource_GetEnumerable(object sender, DevExpress.Data.PLinq.GetEnumerableEventArgs e)
@@ -70,7 +86,7 @@ namespace Titan.WinForms.UserControls
             }
         }
 
-       
+
 
         private void gridViewCustomer_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
@@ -91,6 +107,15 @@ namespace Titan.WinForms.UserControls
                 e.Appearance.ForeColor = Color.Red;   // borç
             else if (balance < 0)
                 e.Appearance.ForeColor = Color.Green; // alacak
+        }
+
+        private void gridViewCustomer_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var point = gridControlCustomer.PointToScreen(e.Location);
+                popupMenu.ShowPopup(point);
+            }
         }
     }
 }

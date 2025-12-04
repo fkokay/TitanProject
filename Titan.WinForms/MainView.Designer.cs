@@ -61,10 +61,11 @@
             barButtonItemCurrency = new DevExpress.XtraBars.BarButtonItem();
             barButtonItemSalesInvoice = new DevExpress.XtraBars.BarButtonItem();
             barButtonItemSalesReturnInvoice = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItemSalesInvoiceAdd = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItemExchangeRate = new DevExpress.XtraBars.BarButtonItem();
             ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -97,9 +98,9 @@
             // ribbonControl1
             // 
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItemCustomerList, barButtonItemCustomerAdd, barButtonItemCustomerTransaction, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItemItem, barButtonItem1, barButtonItem10, barButtonItemWarehouse, barButtonItemWarehouseAdd, barButtonItem13, barButtonItem14, barButtonItem15, barButtonItem16, barButtonItem17, barButtonItem18, barButtonItem19, barButtonItem20, barButtonItem21, barButtonItem22, barButtonItem23, barButtonItemQuikSale, barButtonItemUnit, barButtonItemCurrency, barButtonItemSalesInvoice, barButtonItemSalesReturnInvoice, barButtonItem2, barButtonItem3, barButtonItem11, barButtonItem12 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItemCustomerList, barButtonItemCustomerAdd, barButtonItemCustomerTransaction, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8, barButtonItem9, barButtonItemItem, barButtonItem1, barButtonItem10, barButtonItemWarehouse, barButtonItemWarehouseAdd, barButtonItem13, barButtonItem14, barButtonItem15, barButtonItem16, barButtonItem17, barButtonItem18, barButtonItem19, barButtonItem20, barButtonItem21, barButtonItem22, barButtonItem23, barButtonItemQuikSale, barButtonItemUnit, barButtonItemCurrency, barButtonItemSalesInvoice, barButtonItemSalesReturnInvoice, barButtonItemSalesInvoiceAdd, barButtonItem3, barButtonItem11, barButtonItem12, barButtonItemExchangeRate });
             ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            ribbonControl1.MaxItemId = 36;
+            ribbonControl1.MaxItemId = 37;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPageHome, ribbonPage1, ribbonPage2, ribbonPage3, ribbonPage4, ribbonPage5, ribbonPage6 });
             ribbonControl1.Size = new System.Drawing.Size(1306, 158);
@@ -342,14 +343,15 @@
             barButtonItemSalesReturnInvoice.LargeWidth = 100;
             barButtonItemSalesReturnInvoice.Name = "barButtonItemSalesReturnInvoice";
             // 
-            // barButtonItem2
+            // barButtonItemSalesInvoiceAdd
             // 
-            barButtonItem2.Caption = "Yeni Satış Faturası";
-            barButtonItem2.Id = 32;
-            barButtonItem2.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem2.ImageOptions.Image");
-            barButtonItem2.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem2.ImageOptions.LargeImage");
-            barButtonItem2.LargeWidth = 100;
-            barButtonItem2.Name = "barButtonItem2";
+            barButtonItemSalesInvoiceAdd.Caption = "Yeni Satış Faturası";
+            barButtonItemSalesInvoiceAdd.Id = 32;
+            barButtonItemSalesInvoiceAdd.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItem2.ImageOptions.Image");
+            barButtonItemSalesInvoiceAdd.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem2.ImageOptions.LargeImage");
+            barButtonItemSalesInvoiceAdd.LargeWidth = 100;
+            barButtonItemSalesInvoiceAdd.Name = "barButtonItemSalesInvoiceAdd";
+            barButtonItemSalesInvoiceAdd.ItemClick += barButtonItemSalesInvoiceAdd_ItemClick;
             // 
             // barButtonItem3
             // 
@@ -377,6 +379,16 @@
             barButtonItem12.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItem12.ImageOptions.LargeImage");
             barButtonItem12.LargeWidth = 100;
             barButtonItem12.Name = "barButtonItem12";
+            // 
+            // barButtonItemExchangeRate
+            // 
+            barButtonItemExchangeRate.Caption = "Döviz Kurları";
+            barButtonItemExchangeRate.Id = 36;
+            barButtonItemExchangeRate.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barButtonItemExchangeRate.ImageOptions.Image");
+            barButtonItemExchangeRate.ImageOptions.LargeImage = (System.Drawing.Image)resources.GetObject("barButtonItemExchangeRate.ImageOptions.LargeImage");
+            barButtonItemExchangeRate.LargeWidth = 100;
+            barButtonItemExchangeRate.Name = "barButtonItemExchangeRate";
+            barButtonItemExchangeRate.ItemClick += barButtonItemExchangeRate_ItemClick;
             // 
             // ribbonPageHome
             // 
@@ -476,7 +488,7 @@
             // 
             // ribbonPageGroup14
             // 
-            ribbonPageGroup14.ItemLinks.Add(barButtonItem2);
+            ribbonPageGroup14.ItemLinks.Add(barButtonItemSalesInvoiceAdd);
             ribbonPageGroup14.ItemLinks.Add(barButtonItem3);
             ribbonPageGroup14.ItemLinks.Add(barButtonItem11);
             ribbonPageGroup14.ItemLinks.Add(barButtonItem12);
@@ -526,6 +538,7 @@
             // ribbonPageGroup7
             // 
             ribbonPageGroup7.ItemLinks.Add(barButtonItemCurrency);
+            ribbonPageGroup7.ItemLinks.Add(barButtonItemExchangeRate);
             ribbonPageGroup7.Name = "ribbonPageGroup7";
             ribbonPageGroup7.Text = "Tanımlar";
             // 
@@ -619,10 +632,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemSalesReturnInvoice;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemSalesInvoiceAdd;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemExchangeRate;
     }
 }
 

@@ -15,11 +15,11 @@ using Titan.Data;
 
 namespace Titan.WinForms.Views
 {
-    public partial class CustomerSelectView : DevExpress.XtraEditors.XtraForm
+    public partial class CustomerListModalView : DevExpress.XtraEditors.XtraForm
     {
         private readonly TitanContext _context;
         public Customer SelectCustomer;
-        public CustomerSelectView(TitanContext context)
+        public CustomerListModalView(TitanContext context)
         {
             InitializeComponent();
             _context = context;

@@ -48,7 +48,7 @@ namespace Titan.WinForms
                     // Formlar DI üzerinden çalışır
                     services.AddScoped<MainView>();
                     services.AddScoped<CustomerListView>();
-                    services.AddScoped<CustomerSelectView>();
+                    services.AddScoped<CustomerListModalView>();
                     services.AddScoped<CustomerView>();
                     services.AddScoped<ItemListView>();
                     services.AddScoped<ItemView>();
@@ -64,6 +64,7 @@ namespace Titan.WinForms
                     services.AddScoped<StockTransactionListView>();
                     services.AddScoped<InvoiceListView>();
                     services.AddScoped<InvoiceView>();
+                    services.AddScoped<CustomerTransactionListModalView>();
                 });
         }
     }

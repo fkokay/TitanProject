@@ -40,6 +40,7 @@
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            barButtonItemCustomerTransaction = new DevExpress.XtraBars.BarButtonItem();
             gridControlCustomer = new DevExpress.XtraGrid.GridControl();
             pLinqInstantFeedbackSource = new DevExpress.Data.PLinq.PLinqInstantFeedbackSource();
             gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,9 +54,11 @@
             gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            popupMenu = new DevExpress.XtraBars.PopupMenu(components);
             ((System.ComponentModel.ISupportInitialize)barManager).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControlCustomer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewCustomer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)popupMenu).BeginInit();
             SuspendLayout();
             // 
             // barManager
@@ -66,9 +69,9 @@
             barManager.DockControls.Add(barDockControlLeft);
             barManager.DockControls.Add(barDockControlRight);
             barManager.Form = this;
-            barManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barButtonItemAdd, barButtonItemEdit, barButtonItemDelete, barButtonItemRefresh });
+            barManager.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barButtonItemAdd, barButtonItemEdit, barButtonItemDelete, barButtonItemRefresh, barButtonItemCustomerTransaction });
             barManager.MainMenu = bar2;
-            barManager.MaxItemId = 4;
+            barManager.MaxItemId = 5;
             barManager.StatusBar = bar3;
             // 
             // bar2
@@ -151,6 +154,12 @@
             barDockControlRight.Manager = barManager;
             barDockControlRight.Size = new System.Drawing.Size(0, 698);
             // 
+            // barButtonItemCustomerTransaction
+            // 
+            barButtonItemCustomerTransaction.Caption = "Cari Hesap Hareketleri";
+            barButtonItemCustomerTransaction.Id = 4;
+            barButtonItemCustomerTransaction.Name = "barButtonItemCustomerTransaction";
+            // 
             // gridControlCustomer
             // 
             gridControlCustomer.DataSource = pLinqInstantFeedbackSource;
@@ -176,6 +185,7 @@
             gridViewCustomer.OptionsView.ShowAutoFilterRow = true;
             gridViewCustomer.OptionsView.ShowGroupPanel = false;
             gridViewCustomer.RowCellStyle += gridViewCustomer_RowCellStyle;
+            gridViewCustomer.MouseUp += gridViewCustomer_MouseUp;
             // 
             // colCode
             // 
@@ -273,6 +283,12 @@
             gridColumn3.Visible = true;
             gridColumn3.VisibleIndex = 7;
             // 
+            // popupMenu
+            // 
+            popupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(barButtonItemAdd), new DevExpress.XtraBars.LinkPersistInfo(barButtonItemEdit), new DevExpress.XtraBars.LinkPersistInfo(barButtonItemDelete), new DevExpress.XtraBars.LinkPersistInfo(barButtonItemAdd), new DevExpress.XtraBars.LinkPersistInfo(barButtonItemCustomerTransaction, true) });
+            popupMenu.Manager = barManager;
+            popupMenu.Name = "popupMenu";
+            // 
             // CustomerListView
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)barManager).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControlCustomer).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridViewCustomer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)popupMenu).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -317,5 +334,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemCustomerTransaction;
+        private DevExpress.XtraBars.PopupMenu popupMenu;
     }
 }

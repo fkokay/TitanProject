@@ -35,7 +35,7 @@ namespace Titan.WinForms.UserControls
         private void buttonEditCustomer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
 
-            var view = _serviceProvider.GetRequiredService<CustomerSelectView>();
+            var view = _serviceProvider.GetRequiredService<CustomerListModalView>();
             if (view.ShowDialog() == DialogResult.OK)
             {
                 buttonEditCustomer.Text = view.SelectCustomer.Name;

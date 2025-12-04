@@ -121,5 +121,24 @@ namespace Titan.WinForms
             view.Dock = DockStyle.Fill;
             panelMain.Controls.Add(view);
         }
+
+        private void barButtonItemExchangeRate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            panelMain.Controls.Clear();
+            var view = _serviceProvider.GetRequiredService<ExchangeRateListView>();
+            view.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(view);
+        }
+
+        private void barButtonItemSalesInvoiceAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var view = _serviceProvider.GetRequiredService<InvoiceView>();
+            view.InvoiceType = Core.Domain.Enums.InvoiceType.Sales;
+
+            if (view.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

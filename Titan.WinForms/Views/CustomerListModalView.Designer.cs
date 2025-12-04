@@ -1,6 +1,6 @@
 ﻿namespace Titan.WinForms.Views
 {
-    partial class CustomerSelectView
+    partial class CustomerListModalView
     {
         /// <summary>
         /// Required designer variable.
