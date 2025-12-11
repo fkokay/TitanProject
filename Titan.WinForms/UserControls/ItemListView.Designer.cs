@@ -102,18 +102,21 @@
             barButtonItemEdit.Caption = "Düzenle";
             barButtonItemEdit.Id = 1;
             barButtonItemEdit.Name = "barButtonItemEdit";
+            barButtonItemEdit.ItemClick += barButtonItemEdit_ItemClick;
             // 
             // barButtonItemDelete
             // 
             barButtonItemDelete.Caption = "Sil";
             barButtonItemDelete.Id = 2;
             barButtonItemDelete.Name = "barButtonItemDelete";
+            barButtonItemDelete.ItemClick += barButtonItemDelete_ItemClick;
             // 
             // barButtonItemRefresh
             // 
             barButtonItemRefresh.Caption = "Yenile";
             barButtonItemRefresh.Id = 3;
             barButtonItemRefresh.Name = "barButtonItemRefresh";
+            barButtonItemRefresh.ItemClick += barButtonItemRefresh_ItemClick;
             // 
             // bar3
             // 

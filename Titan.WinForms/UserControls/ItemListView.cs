@@ -68,5 +68,38 @@ namespace Titan.WinForms.UserControls
                 pLinqInstantFeedbackSource.Refresh();
             }
         }
+
+        private void barButtonItemEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = _provider.GetRequiredService<ItemView>();
+            var itemId = Convert.ToInt32(gridViewItem.GetFocusedRowCellValue("Id"));
+            form.EditItem = _context.Items.FirstOrDefault(i => i.Id == itemId);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                pLinqInstantFeedbackSource.Refresh();
+            }
+        }
+
+        private void barButtonItemDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var itemId = Convert.ToInt32(gridViewItem.GetFocusedRowCellValue("Id"));
+            var item = _context.Items.FirstOrDefault(i => i.Id == itemId);
+            if (item != null)
+            {
+                var result = XtraMessageBox.Show($"'{item.Name}' öğesini silmek istediğinizden emin misiniz?", "Onayla", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    _context.Items.Remove(item);
+                    _context.SaveChanges();
+                    pLinqInstantFeedbackSource.Refresh();
+                }
+            }
+
+        }
+
+        private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            pLinqInstantFeedbackSource.Refresh();
+        }
     }
 }
