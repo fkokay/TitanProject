@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Titan.Data;
 
@@ -11,9 +12,11 @@ using Titan.Data;
 namespace Titan.Data.Migrations
 {
     [DbContext(typeof(TitanContext))]
-    partial class TitanContextModelSnapshot : ModelSnapshot
+    [Migration("20251211212818_editAttribute4")]
+    partial class editAttribute4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -519,7 +522,7 @@ namespace Titan.Data.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("ItemAttributeDefinition");
+                    b.ToTable("ItemAttributeDefinitions");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.ItemUnitConversion", b =>
@@ -551,7 +554,7 @@ namespace Titan.Data.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("ItemUnitConversion");
+                    b.ToTable("ItemUnitConversions");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.ItemVariant", b =>
@@ -616,7 +619,7 @@ namespace Titan.Data.Migrations
 
                     b.HasIndex("VariantId");
 
-                    b.ToTable("ItemVariantAttribute");
+                    b.ToTable("ItemVariantAttributes");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.StockTransaction", b =>
@@ -722,7 +725,7 @@ namespace Titan.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Unit");
+                    b.ToTable("Units");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.Warehouse", b =>

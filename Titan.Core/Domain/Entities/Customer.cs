@@ -8,6 +8,7 @@ using TitanProject.Core.Common;
 
 namespace Titan.Core.Domain.Entities
 {
+    [Table("Customer")]
     public class Customer : BaseEntity, IActivatable, ISoftDeletable, IAuditable
     {
         public string Code { get; set; } = string.Empty;

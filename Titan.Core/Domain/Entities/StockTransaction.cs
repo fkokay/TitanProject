@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,12 @@ using TitanProject.Core.Common;
 
 namespace Titan.Core.Domain.Entities
 {
+    [Table("StockTransaction")]
     public class StockTransaction : BaseEntity, IActivatable, ISoftDeletable, IAuditable
     {
         public int ItemId { get; set; }
         public Item Item { get; set; }
+        public int? VariantId { get; set; }
         public int WarehouseId { get; set; }
         public Warehouse Warehouse { get; set; }
         public MaterialTransactionType TransactionType { get; set; }

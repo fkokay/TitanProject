@@ -29,7 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            bar2 = new DevExpress.XtraBars.Bar();
+            gridViewItemVariant = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridControlItem = new DevExpress.XtraGrid.GridControl();
+            pLinqInstantFeedbackSource = new DevExpress.Data.PLinq.PLinqInstantFeedbackSource();
+            gridViewItem = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colStock = new DevExpress.XtraGrid.Columns.GridColumn();
+            colActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            colCreatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUpdatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
             barManager = new DevExpress.XtraBars.BarManager(components);
             bar1 = new DevExpress.XtraBars.Bar();
             barButtonItemAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -41,30 +51,105 @@
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            gridControlItem = new DevExpress.XtraGrid.GridControl();
-            pLinqInstantFeedbackSource = new DevExpress.Data.PLinq.PLinqInstantFeedbackSource();
-            gridViewItem = new DevExpress.XtraGrid.Views.Grid.GridView();
-            colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            colStock = new DevExpress.XtraGrid.Columns.GridColumn();
-            colActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            colCreatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
-            colUpdatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)barManager).BeginInit();
+            bar2 = new DevExpress.XtraBars.Bar();
+            ((System.ComponentModel.ISupportInitialize)gridViewItemVariant).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControlItem).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewItem).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)barManager).BeginInit();
             SuspendLayout();
             // 
-            // bar2
+            // gridViewItemVariant
             // 
-            bar2.BarName = "Main menu";
-            bar2.DockCol = 0;
-            bar2.DockRow = 0;
-            bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            bar2.OptionsBar.MultiLine = true;
-            bar2.OptionsBar.UseWholeRow = true;
-            bar2.Text = "Main menu";
+            gridViewItemVariant.GridControl = gridControlItem;
+            gridViewItemVariant.Name = "gridViewItemVariant";
+            // 
+            // gridControlItem
+            // 
+            gridControlItem.DataSource = pLinqInstantFeedbackSource;
+            gridControlItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridControlItem.Location = new System.Drawing.Point(0, 20);
+            gridControlItem.MainView = gridViewItem;
+            gridControlItem.MenuManager = barManager;
+            gridControlItem.Name = "gridControlItem";
+            gridControlItem.Size = new System.Drawing.Size(955, 481);
+            gridControlItem.TabIndex = 4;
+            gridControlItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewItem, gridViewItemVariant });
+            // 
+            // pLinqInstantFeedbackSource
+            // 
+            pLinqInstantFeedbackSource.DefaultSorting = "Code ASC";
+            pLinqInstantFeedbackSource.DesignTimeElementType = typeof(Core.Domain.Entities.Item);
+            // 
+            // gridViewItem
+            // 
+            gridViewItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colStock, colActive, colCreatedOnUtc, colUpdatedOnUtc });
+            gridViewItem.GridControl = gridControlItem;
+            gridViewItem.Name = "gridViewItem";
+            gridViewItem.OptionsView.ShowAutoFilterRow = true;
+            gridViewItem.OptionsView.ShowGroupPanel = false;
+            gridViewItem.MasterRowGetChildList += gridViewItem_MasterRowGetChildList;
+            // 
+            // colId
+            // 
+            colId.FieldName = "Id";
+            colId.Name = "colId";
+            colId.OptionsColumn.AllowEdit = false;
+            colId.Visible = true;
+            colId.VisibleIndex = 0;
+            // 
+            // colCode
+            // 
+            colCode.Caption = "Kod";
+            colCode.FieldName = "Code";
+            colCode.Name = "colCode";
+            colCode.OptionsColumn.AllowEdit = false;
+            colCode.Visible = true;
+            colCode.VisibleIndex = 1;
+            // 
+            // colName
+            // 
+            colName.Caption = "Ad";
+            colName.FieldName = "Name";
+            colName.Name = "colName";
+            colName.OptionsColumn.AllowEdit = false;
+            colName.Visible = true;
+            colName.VisibleIndex = 2;
+            // 
+            // colStock
+            // 
+            colStock.Caption = "Stok";
+            colStock.FieldName = "Stock";
+            colStock.Name = "colStock";
+            colStock.OptionsColumn.AllowEdit = false;
+            colStock.Visible = true;
+            colStock.VisibleIndex = 3;
+            // 
+            // colActive
+            // 
+            colActive.Caption = "Aktif";
+            colActive.FieldName = "Active";
+            colActive.Name = "colActive";
+            colActive.OptionsColumn.AllowEdit = false;
+            colActive.Visible = true;
+            colActive.VisibleIndex = 4;
+            // 
+            // colCreatedOnUtc
+            // 
+            colCreatedOnUtc.Caption = "Kayıt Tarihi";
+            colCreatedOnUtc.FieldName = "CreatedOnUtc";
+            colCreatedOnUtc.Name = "colCreatedOnUtc";
+            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
+            colCreatedOnUtc.Visible = true;
+            colCreatedOnUtc.VisibleIndex = 5;
+            // 
+            // colUpdatedOnUtc
+            // 
+            colUpdatedOnUtc.Caption = "Güncellenme Tarihi";
+            colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
+            colUpdatedOnUtc.Name = "colUpdatedOnUtc";
+            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
+            colUpdatedOnUtc.Visible = true;
+            colUpdatedOnUtc.VisibleIndex = 6;
             // 
             // barManager
             // 
@@ -162,92 +247,15 @@
             barDockControlRight.Manager = barManager;
             barDockControlRight.Size = new System.Drawing.Size(0, 481);
             // 
-            // gridControlItem
+            // bar2
             // 
-            gridControlItem.DataSource = pLinqInstantFeedbackSource;
-            gridControlItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridControlItem.Location = new System.Drawing.Point(0, 20);
-            gridControlItem.MainView = gridViewItem;
-            gridControlItem.MenuManager = barManager;
-            gridControlItem.Name = "gridControlItem";
-            gridControlItem.Size = new System.Drawing.Size(955, 481);
-            gridControlItem.TabIndex = 4;
-            gridControlItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewItem });
-            // 
-            // pLinqInstantFeedbackSource
-            // 
-            pLinqInstantFeedbackSource.DefaultSorting = "Code ASC";
-            pLinqInstantFeedbackSource.DesignTimeElementType = typeof(Core.Domain.Entities.Item);
-            // 
-            // gridViewItem
-            // 
-            gridViewItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colStock, colActive, colCreatedOnUtc, colUpdatedOnUtc });
-            gridViewItem.GridControl = gridControlItem;
-            gridViewItem.Name = "gridViewItem";
-            gridViewItem.OptionsView.ShowAutoFilterRow = true;
-            gridViewItem.OptionsView.ShowGroupPanel = false;
-            // 
-            // colId
-            // 
-            colId.FieldName = "Id";
-            colId.Name = "colId";
-            colId.OptionsColumn.AllowEdit = false;
-            colId.Visible = true;
-            colId.VisibleIndex = 0;
-            // 
-            // colCode
-            // 
-            colCode.Caption = "Kod";
-            colCode.FieldName = "Code";
-            colCode.Name = "colCode";
-            colCode.OptionsColumn.AllowEdit = false;
-            colCode.Visible = true;
-            colCode.VisibleIndex = 1;
-            // 
-            // colName
-            // 
-            colName.Caption = "Ad";
-            colName.FieldName = "Name";
-            colName.Name = "colName";
-            colName.OptionsColumn.AllowEdit = false;
-            colName.Visible = true;
-            colName.VisibleIndex = 2;
-            // 
-            // colStock
-            // 
-            colStock.Caption = "Stok";
-            colStock.FieldName = "Stock";
-            colStock.Name = "colStock";
-            colStock.OptionsColumn.AllowEdit = false;
-            colStock.Visible = true;
-            colStock.VisibleIndex = 3;
-            // 
-            // colActive
-            // 
-            colActive.Caption = "Aktif";
-            colActive.FieldName = "Active";
-            colActive.Name = "colActive";
-            colActive.OptionsColumn.AllowEdit = false;
-            colActive.Visible = true;
-            colActive.VisibleIndex = 4;
-            // 
-            // colCreatedOnUtc
-            // 
-            colCreatedOnUtc.Caption = "Kayıt Tarihi";
-            colCreatedOnUtc.FieldName = "CreatedOnUtc";
-            colCreatedOnUtc.Name = "colCreatedOnUtc";
-            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
-            colCreatedOnUtc.Visible = true;
-            colCreatedOnUtc.VisibleIndex = 5;
-            // 
-            // colUpdatedOnUtc
-            // 
-            colUpdatedOnUtc.Caption = "Güncellenme Tarihi";
-            colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
-            colUpdatedOnUtc.Name = "colUpdatedOnUtc";
-            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
-            colUpdatedOnUtc.Visible = true;
-            colUpdatedOnUtc.VisibleIndex = 6;
+            bar2.BarName = "Main menu";
+            bar2.DockCol = 0;
+            bar2.DockRow = 0;
+            bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            bar2.OptionsBar.MultiLine = true;
+            bar2.OptionsBar.UseWholeRow = true;
+            bar2.Text = "Main menu";
             // 
             // ItemListView
             // 
@@ -260,9 +268,11 @@
             Controls.Add(barDockControlTop);
             Name = "ItemListView";
             Size = new System.Drawing.Size(955, 521);
-            ((System.ComponentModel.ISupportInitialize)barManager).EndInit();
+            Load += ItemListView_Load;
+            ((System.ComponentModel.ISupportInitialize)gridViewItemVariant).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControlItem).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridViewItem).EndInit();
+            ((System.ComponentModel.ISupportInitialize)barManager).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,5 +301,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUpdatedOnUtc;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colStock;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewItemVariant;
     }
 }

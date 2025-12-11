@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Titan.Data;
 
@@ -11,9 +12,11 @@ using Titan.Data;
 namespace Titan.Data.Migrations
 {
     [DbContext(typeof(TitanContext))]
-    partial class TitanContextModelSnapshot : ModelSnapshot
+    [Migration("20251211211423_editAttribute2")]
+    partial class editAttribute2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -393,16 +396,11 @@ namespace Titan.Data.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("VariantId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("InvoiceId");
 
                     b.HasIndex("ItemId");
-
-                    b.HasIndex("VariantId");
 
                     b.ToTable("InvoiceLines", (string)null);
                 });
@@ -517,9 +515,7 @@ namespace Titan.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ItemId");
-
-                    b.ToTable("ItemAttributeDefinition");
+                    b.ToTable("ItemAttributeDefinitions");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.ItemUnitConversion", b =>
@@ -551,7 +547,7 @@ namespace Titan.Data.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("ItemUnitConversion");
+                    b.ToTable("ItemUnitConversions");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.ItemVariant", b =>
@@ -588,8 +584,6 @@ namespace Titan.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ItemId");
-
                     b.ToTable("ItemVariant");
                 });
 
@@ -614,9 +608,7 @@ namespace Titan.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VariantId");
-
-                    b.ToTable("ItemVariantAttribute");
+                    b.ToTable("ItemVariantAttributes");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.StockTransaction", b =>
@@ -683,9 +675,6 @@ namespace Titan.Data.Migrations
                     b.Property<DateTime>("UpdatedOnUtc")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("VariantId")
-                        .HasColumnType("int");
-
                     b.Property<int>("WarehouseId")
                         .HasColumnType("int");
 
@@ -722,7 +711,7 @@ namespace Titan.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Unit");
+                    b.ToTable("Units");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.Warehouse", b =>
@@ -800,24 +789,7 @@ namespace Titan.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Titan.Core.Domain.Entities.ItemVariant", "Variant")
-                        .WithMany()
-                        .HasForeignKey("VariantId");
-
                     b.Navigation("Invoice");
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Variant");
-                });
-
-            modelBuilder.Entity("Titan.Core.Domain.Entities.ItemAttributeDefinition", b =>
-                {
-                    b.HasOne("Titan.Core.Domain.Entities.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("Item");
                 });
@@ -831,28 +803,6 @@ namespace Titan.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Item");
-                });
-
-            modelBuilder.Entity("Titan.Core.Domain.Entities.ItemVariant", b =>
-                {
-                    b.HasOne("Titan.Core.Domain.Entities.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Item");
-                });
-
-            modelBuilder.Entity("Titan.Core.Domain.Entities.ItemVariantAttribute", b =>
-                {
-                    b.HasOne("Titan.Core.Domain.Entities.ItemVariant", "Variant")
-                        .WithMany()
-                        .HasForeignKey("VariantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Variant");
                 });
 
             modelBuilder.Entity("Titan.Core.Domain.Entities.StockTransaction", b =>

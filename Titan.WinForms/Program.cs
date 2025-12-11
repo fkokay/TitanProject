@@ -1,4 +1,5 @@
-﻿using DevExpress.Skins;
+﻿using DevExpress.CodeParser;
+using DevExpress.Skins;
 using DevExpress.UserSkins;
 using DevExpress.XtraWaitForm;
 using Microsoft.EntityFrameworkCore;
@@ -43,7 +44,9 @@ namespace Titan.WinForms
 
                     // DbContext
                     services.AddDbContext<TitanContext>(options =>
-                        options.UseSqlServer(connectionString));
+                    {
+                        options.UseSqlServer(connectionString);
+                    }, ServiceLifetime.Transient);
 
                     // Formlar DI üzerinden çalışır
                     services.AddScoped<MainView>();
