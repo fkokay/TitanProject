@@ -52,12 +52,13 @@ namespace Titan.WinForms.UserControls
 
             e.Source =
                  db.Customers
+                 .Where(m=>m.Deleted == false)
                  .AsNoTracking()
                  .Select(c => new Customer
                  {
                      Id = c.Id,
                      Code = c.Code,
-                     Name = c.Name,
+                     Definition = c.Definition,
                      Active = c.Active,
                      Deleted = c.Deleted,
                      CreatedOnUtc = c.CreatedOnUtc,
@@ -79,6 +80,7 @@ namespace Titan.WinForms.UserControls
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var form = _provider.GetRequiredService<CustomerView>();
+            form.EditCustomer = null;
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -116,6 +118,40 @@ namespace Titan.WinForms.UserControls
                 var point = gridControlCustomer.PointToScreen(e.Location);
                 popupMenu.ShowPopup(point);
             }
+        }
+
+        private void barButtonItemEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var selectedCustomer = gridViewCustomer.GetFocusedRow() as Customer;
+            if (selectedCustomer == null) return;
+            var form = _provider.GetRequiredService<CustomerView>();
+            form.EditCustomer = _context.Customers.Find(selectedCustomer.Id);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                pLinqInstantFeedbackSource.Refresh();
+            }
+        }
+
+        private void barButtonItemDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var selectedCustomer = gridViewCustomer.GetFocusedRow() as Customer;
+            if (selectedCustomer == null) return;
+            var result = XtraMessageBox.Show("Seçili müşteriyi silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                var customer = _context.Customers.Find(selectedCustomer.Id);
+                if (customer != null)
+                {
+                    customer.Deleted = true;
+                    _context.SaveChanges();
+                    pLinqInstantFeedbackSource.Refresh();
+                }
+            }
+        }
+
+        private void barButtonItemRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            pLinqInstantFeedbackSource.Refresh();
         }
     }
 }

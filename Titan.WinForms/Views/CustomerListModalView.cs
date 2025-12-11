@@ -31,12 +31,13 @@ namespace Titan.WinForms.Views
 
             e.Source =
                  _context.Customers
+                 .Where(m => m.Deleted == false)
                  .AsNoTracking()
                  .Select(c => new Customer
                  {
                      Id = c.Id,
                      Code = c.Code,
-                     Name = c.Name,
+                     Definition = c.Definition,
                      Active = c.Active,
                      Deleted = c.Deleted,
                      CreatedOnUtc = c.CreatedOnUtc,

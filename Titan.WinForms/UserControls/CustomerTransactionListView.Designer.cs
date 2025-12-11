@@ -191,7 +191,7 @@
             // colCustomer
             // 
             colCustomer.Caption = "Cari Hesap Ünvanı";
-            colCustomer.FieldName = "Customer.Name";
+            colCustomer.FieldName = "Customer.Definition";
             colCustomer.Name = "colCustomer";
             colCustomer.Visible = true;
             colCustomer.VisibleIndex = 2;

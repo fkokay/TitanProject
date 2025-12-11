@@ -62,6 +62,7 @@ namespace Titan.WinForms.UserControls
         private void barButtonItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var form = _provider.GetRequiredService<ItemView>();
+            form.EditItem = null;
 
             if (form.ShowDialog() == DialogResult.OK)
             {

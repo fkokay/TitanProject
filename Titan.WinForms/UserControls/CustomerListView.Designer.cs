@@ -45,7 +45,7 @@
             pLinqInstantFeedbackSource = new DevExpress.Data.PLinq.PLinqInstantFeedbackSource();
             gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDefinition = new DevExpress.XtraGrid.Columns.GridColumn();
             colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             colCreatedOnUtc = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -97,18 +97,21 @@
             barButtonItemEdit.Caption = "Düzenle";
             barButtonItemEdit.Id = 1;
             barButtonItemEdit.Name = "barButtonItemEdit";
+            barButtonItemEdit.ItemClick += barButtonItemEdit_ItemClick;
             // 
             // barButtonItemDelete
             // 
             barButtonItemDelete.Caption = "Sil";
             barButtonItemDelete.Id = 2;
             barButtonItemDelete.Name = "barButtonItemDelete";
+            barButtonItemDelete.ItemClick += barButtonItemDelete_ItemClick;
             // 
             // barButtonItemRefresh
             // 
             barButtonItemRefresh.Caption = "Yenile";
             barButtonItemRefresh.Id = 3;
             barButtonItemRefresh.Name = "barButtonItemRefresh";
+            barButtonItemRefresh.ItemClick += barButtonItemRefresh_ItemClick;
             // 
             // bar3
             // 
@@ -179,7 +182,7 @@
             // 
             // gridViewCustomer
             // 
-            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCode, colName, colActive, colDeleted, colCreatedOnUtc, colUpdatedOnUtc, colId, gridColumn1, gridColumn2, gridColumn3 });
+            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCode, colDefinition, colActive, colDeleted, colCreatedOnUtc, colUpdatedOnUtc, colId, gridColumn1, gridColumn2, gridColumn3 });
             gridViewCustomer.GridControl = gridControlCustomer;
             gridViewCustomer.Name = "gridViewCustomer";
             gridViewCustomer.OptionsView.ShowAutoFilterRow = true;
@@ -196,15 +199,15 @@
             colCode.Visible = true;
             colCode.VisibleIndex = 1;
             // 
-            // colName
+            // colDefinition
             // 
-            colName.Caption = "Cari Ünvan";
-            colName.FieldName = "Name";
-            colName.Name = "colName";
-            colName.OptionsColumn.AllowEdit = false;
-            colName.Visible = true;
-            colName.VisibleIndex = 2;
-            colName.Width = 300;
+            colDefinition.Caption = "Cari Ünvan";
+            colDefinition.FieldName = "Definition";
+            colDefinition.Name = "colDefinition";
+            colDefinition.OptionsColumn.AllowEdit = false;
+            colDefinition.Visible = true;
+            colDefinition.VisibleIndex = 2;
+            colDefinition.Width = 300;
             // 
             // colActive
             // 
@@ -325,7 +328,7 @@
         private DevExpress.Data.PLinq.PLinqInstantFeedbackSource pLinqInstantFeedbackSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDefinition;
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
         private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedOnUtc;

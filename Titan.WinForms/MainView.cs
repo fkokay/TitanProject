@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DevExpress.Data.PLinq;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,6 +83,7 @@ namespace Titan.WinForms
         private void barButtonItemCustomerAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var view = _serviceProvider.GetRequiredService<CustomerView>();
+            view.EditCustomer = null;
             if (view.ShowDialog() == DialogResult.OK)
             {
 
@@ -139,6 +141,13 @@ namespace Titan.WinForms
             {
 
             }
+        }
+
+        private void barButtonItemItemAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var form = _serviceProvider.GetRequiredService<ItemView>();
+            form.EditItem = null;
+            form.Show();
         }
     }
 }

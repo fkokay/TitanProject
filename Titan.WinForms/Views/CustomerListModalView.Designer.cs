@@ -36,7 +36,7 @@
             gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             colId = new DevExpress.XtraGrid.Columns.GridColumn();
             colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDefinition = new DevExpress.XtraGrid.Columns.GridColumn();
             colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             colDeleted = new DevExpress.XtraGrid.Columns.GridColumn();
             colDebit = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,7 +100,7 @@
             // 
             // gridViewCustomer
             // 
-            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colActive, colDeleted, colDebit, colCredit, colBalance, colCreatedOnUtc, colUpdatedOnUtc });
+            gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colDefinition, colActive, colDeleted, colDebit, colCredit, colBalance, colCreatedOnUtc, colUpdatedOnUtc });
             gridViewCustomer.GridControl = gridControlCustomer;
             gridViewCustomer.Name = "gridViewCustomer";
             gridViewCustomer.OptionsView.ShowAutoFilterRow = true;
@@ -125,15 +125,15 @@
             colCode.Visible = true;
             colCode.VisibleIndex = 1;
             // 
-            // colName
+            // colDefinition
             // 
-            colName.Caption = "Cari Ünvan";
-            colName.FieldName = "Name";
-            colName.Name = "colName";
-            colName.OptionsColumn.AllowEdit = false;
-            colName.Visible = true;
-            colName.VisibleIndex = 2;
-            colName.Width = 300;
+            colDefinition.Caption = "Cari Ünvan";
+            colDefinition.FieldName = "Definition";
+            colDefinition.Name = "colDefinition";
+            colDefinition.OptionsColumn.AllowEdit = false;
+            colDefinition.Visible = true;
+            colDefinition.VisibleIndex = 2;
+            colDefinition.Width = 300;
             // 
             // colActive
             // 
@@ -204,14 +204,14 @@
             colUpdatedOnUtc.Visible = true;
             colUpdatedOnUtc.VisibleIndex = 9;
             // 
-            // CustomerSelectView
+            // CustomerListModalView
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(991, 539);
             Controls.Add(gridControlCustomer);
             Controls.Add(panelControl1);
-            Name = "CustomerSelectView";
+            Name = "CustomerListModalView";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Cari Hesap Seçiniz";
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
@@ -230,7 +230,7 @@
         private DevExpress.XtraGrid.GridControl gridControlCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCustomer;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDefinition;
         private DevExpress.XtraGrid.Columns.GridColumn colActive;
         private DevExpress.XtraGrid.Columns.GridColumn colDeleted;
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedOnUtc;
