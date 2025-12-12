@@ -33,7 +33,16 @@
             simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
             gridControlLine = new DevExpress.XtraGrid.GridControl();
             gridViewLine = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            textEditDescription = new DevExpress.XtraEditors.TextEdit();
+            labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            dateEditInvoiceDate = new DevExpress.XtraEditors.DateEdit();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             buttonEditCustomerName = new DevExpress.XtraEditors.ButtonEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -41,21 +50,21 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             textEditInvoiceNo = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            dateEditInvoiceDate = new DevExpress.XtraEditors.DateEdit();
-            labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            textEditDescription = new DevExpress.XtraEditors.TextEdit();
+            gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControlLine).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewLine).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).BeginInit();
             panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)textEditDescription.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)buttonEditCustomerName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)buttonEditCustomerCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEditInvoiceNo.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEditDescription.Properties).BeginInit();
             SuspendLayout();
             // 
             // panelControl1
@@ -100,9 +109,58 @@
             // 
             // gridViewLine
             // 
+            gridViewLine.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3, gridColumn4, gridColumn5, gridColumn6, gridColumn7, gridColumn8, gridColumn9 });
             gridViewLine.GridControl = gridControlLine;
             gridViewLine.Name = "gridViewLine";
             gridViewLine.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            gridColumn1.Caption = "Kodu";
+            gridColumn1.FieldName = "Item.Code";
+            gridColumn1.Name = "gridColumn1";
+            gridColumn1.Visible = true;
+            gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            gridColumn2.Caption = "Açıklama";
+            gridColumn2.FieldName = "Item.Name";
+            gridColumn2.Name = "gridColumn2";
+            gridColumn2.Visible = true;
+            gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            gridColumn3.Caption = "Miktar";
+            gridColumn3.FieldName = "Quantity";
+            gridColumn3.Name = "gridColumn3";
+            gridColumn3.Visible = true;
+            gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            gridColumn4.Caption = "Birim";
+            gridColumn4.FieldName = "Unit";
+            gridColumn4.Name = "gridColumn4";
+            gridColumn4.Visible = true;
+            gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            gridColumn5.Caption = "Birim Fiyatı";
+            gridColumn5.FieldName = "UnitPrice";
+            gridColumn5.Name = "gridColumn5";
+            gridColumn5.Visible = true;
+            gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            gridColumn6.Caption = "KDV(%)";
+            gridColumn6.FieldName = "TaxRate";
+            gridColumn6.Name = "gridColumn6";
+            gridColumn6.Visible = true;
+            gridColumn6.VisibleIndex = 5;
             // 
             // panelControl2
             // 
@@ -121,6 +179,31 @@
             panelControl2.Name = "panelControl2";
             panelControl2.Size = new System.Drawing.Size(1302, 167);
             panelControl2.TabIndex = 4;
+            // 
+            // textEditDescription
+            // 
+            textEditDescription.Location = new System.Drawing.Point(12, 121);
+            textEditDescription.Name = "textEditDescription";
+            textEditDescription.Size = new System.Drawing.Size(258, 20);
+            textEditDescription.TabIndex = 10;
+            // 
+            // labelControl5
+            // 
+            labelControl5.Location = new System.Drawing.Point(12, 102);
+            labelControl5.Name = "labelControl5";
+            labelControl5.Size = new System.Drawing.Size(57, 13);
+            labelControl5.TabIndex = 9;
+            labelControl5.Text = "Sipariş Notu";
+            // 
+            // dateEditInvoiceDate
+            // 
+            dateEditInvoiceDate.EditValue = null;
+            dateEditInvoiceDate.Location = new System.Drawing.Point(12, 76);
+            dateEditInvoiceDate.Name = "dateEditInvoiceDate";
+            dateEditInvoiceDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateEditInvoiceDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateEditInvoiceDate.Size = new System.Drawing.Size(258, 20);
+            dateEditInvoiceDate.TabIndex = 8;
             // 
             // labelControl4
             // 
@@ -179,30 +262,28 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Fatura No";
             // 
-            // dateEditInvoiceDate
+            // gridColumn7
             // 
-            dateEditInvoiceDate.EditValue = null;
-            dateEditInvoiceDate.Location = new System.Drawing.Point(12, 76);
-            dateEditInvoiceDate.Name = "dateEditInvoiceDate";
-            dateEditInvoiceDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEditInvoiceDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEditInvoiceDate.Size = new System.Drawing.Size(258, 20);
-            dateEditInvoiceDate.TabIndex = 8;
+            gridColumn7.Caption = "Tutarı";
+            gridColumn7.FieldName = "TotalLocal";
+            gridColumn7.Name = "gridColumn7";
+            gridColumn7.Visible = true;
+            gridColumn7.VisibleIndex = 6;
             // 
-            // labelControl5
+            // gridColumn8
             // 
-            labelControl5.Location = new System.Drawing.Point(12, 102);
-            labelControl5.Name = "labelControl5";
-            labelControl5.Size = new System.Drawing.Size(57, 13);
-            labelControl5.TabIndex = 9;
-            labelControl5.Text = "Sipariş Notu";
+            gridColumn8.Caption = "KDV Tutarı";
+            gridColumn8.Name = "gridColumn8";
+            gridColumn8.Visible = true;
+            gridColumn8.VisibleIndex = 7;
             // 
-            // textEditDescription
+            // gridColumn9
             // 
-            textEditDescription.Location = new System.Drawing.Point(12, 121);
-            textEditDescription.Name = "textEditDescription";
-            textEditDescription.Size = new System.Drawing.Size(258, 20);
-            textEditDescription.TabIndex = 10;
+            gridColumn9.Caption = "Net Tutar";
+            gridColumn9.FieldName = "LineTotal";
+            gridColumn9.Name = "gridColumn9";
+            gridColumn9.Visible = true;
+            gridColumn9.VisibleIndex = 8;
             // 
             // InvoiceView
             // 
@@ -223,12 +304,12 @@
             ((System.ComponentModel.ISupportInitialize)panelControl2).EndInit();
             panelControl2.ResumeLayout(false);
             panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)textEditDescription.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)buttonEditCustomerName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)buttonEditCustomerCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEditInvoiceNo.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEditInvoiceDate.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEditDescription.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -251,5 +332,14 @@
         private DevExpress.XtraEditors.DateEdit dateEditInvoiceDate;
         private DevExpress.XtraEditors.TextEdit textEditDescription;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

@@ -174,6 +174,7 @@
             // 
             colCode.FieldName = "Code";
             colCode.Name = "colCode";
+            colCode.OptionsColumn.AllowEdit = false;
             colCode.Visible = true;
             colCode.VisibleIndex = 1;
             // 
@@ -181,6 +182,7 @@
             // 
             colName.FieldName = "Name";
             colName.Name = "colName";
+            colName.OptionsColumn.AllowEdit = false;
             colName.Visible = true;
             colName.VisibleIndex = 2;
             // 
@@ -188,6 +190,7 @@
             // 
             colSymbol.FieldName = "Symbol";
             colSymbol.Name = "colSymbol";
+            colSymbol.OptionsColumn.AllowEdit = false;
             colSymbol.Visible = true;
             colSymbol.VisibleIndex = 3;
             // 
@@ -195,6 +198,7 @@
             // 
             colPrecision.FieldName = "Precision";
             colPrecision.Name = "colPrecision";
+            colPrecision.OptionsColumn.AllowEdit = false;
             colPrecision.Visible = true;
             colPrecision.VisibleIndex = 4;
             // 
@@ -202,6 +206,7 @@
             // 
             colActive.FieldName = "Active";
             colActive.Name = "colActive";
+            colActive.OptionsColumn.AllowEdit = false;
             colActive.Visible = true;
             colActive.VisibleIndex = 5;
             // 
@@ -209,6 +214,7 @@
             // 
             colId.FieldName = "Id";
             colId.Name = "colId";
+            colId.OptionsColumn.AllowEdit = false;
             colId.Visible = true;
             colId.VisibleIndex = 0;
             // 

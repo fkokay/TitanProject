@@ -181,6 +181,7 @@
             colCurrencyCode.Caption = "Para Birimi";
             colCurrencyCode.FieldName = "CurrencyCode";
             colCurrencyCode.Name = "colCurrencyCode";
+            colCurrencyCode.OptionsColumn.AllowEdit = false;
             colCurrencyCode.Visible = true;
             colCurrencyCode.VisibleIndex = 1;
             // 
@@ -189,6 +190,7 @@
             colRateDate.Caption = "Kur Tarihi";
             colRateDate.FieldName = "RateDate";
             colRateDate.Name = "colRateDate";
+            colRateDate.OptionsColumn.AllowEdit = false;
             colRateDate.Visible = true;
             colRateDate.VisibleIndex = 2;
             // 
@@ -197,6 +199,7 @@
             colBuyingRate.Caption = "Alış Kuru";
             colBuyingRate.FieldName = "BuyingRate";
             colBuyingRate.Name = "colBuyingRate";
+            colBuyingRate.OptionsColumn.AllowEdit = false;
             colBuyingRate.Visible = true;
             colBuyingRate.VisibleIndex = 3;
             // 
@@ -205,6 +208,7 @@
             colSellingRate.Caption = "Satış Kuru";
             colSellingRate.FieldName = "SellingRate";
             colSellingRate.Name = "colSellingRate";
+            colSellingRate.OptionsColumn.AllowEdit = false;
             colSellingRate.Visible = true;
             colSellingRate.VisibleIndex = 4;
             // 
@@ -212,6 +216,7 @@
             // 
             colId.FieldName = "Id";
             colId.Name = "colId";
+            colId.OptionsColumn.AllowEdit = false;
             colId.Visible = true;
             colId.VisibleIndex = 0;
             // 

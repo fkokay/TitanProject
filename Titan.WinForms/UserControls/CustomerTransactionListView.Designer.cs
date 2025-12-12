@@ -185,6 +185,7 @@
             colCustomerId.Caption = "Müşteri Id";
             colCustomerId.FieldName = "CustomerId";
             colCustomerId.Name = "colCustomerId";
+            colCustomerId.OptionsColumn.AllowEdit = false;
             colCustomerId.Visible = true;
             colCustomerId.VisibleIndex = 1;
             // 
@@ -193,6 +194,7 @@
             colCustomer.Caption = "Cari Hesap Ünvanı";
             colCustomer.FieldName = "Customer.Definition";
             colCustomer.Name = "colCustomer";
+            colCustomer.OptionsColumn.AllowEdit = false;
             colCustomer.Visible = true;
             colCustomer.VisibleIndex = 2;
             // 
@@ -201,6 +203,7 @@
             colTransactionDate.Caption = "Fiş Tarihi";
             colTransactionDate.FieldName = "TransactionDate";
             colTransactionDate.Name = "colTransactionDate";
+            colTransactionDate.OptionsColumn.AllowEdit = false;
             colTransactionDate.Visible = true;
             colTransactionDate.VisibleIndex = 3;
             // 
@@ -209,6 +212,7 @@
             colDueDate.Caption = "Vade Tarihi";
             colDueDate.FieldName = "DueDate";
             colDueDate.Name = "colDueDate";
+            colDueDate.OptionsColumn.AllowEdit = false;
             colDueDate.Visible = true;
             colDueDate.VisibleIndex = 4;
             // 
@@ -217,6 +221,7 @@
             colDocumentNo.Caption = "Belge No";
             colDocumentNo.FieldName = "DocumentNo";
             colDocumentNo.Name = "colDocumentNo";
+            colDocumentNo.OptionsColumn.AllowEdit = false;
             colDocumentNo.Visible = true;
             colDocumentNo.VisibleIndex = 5;
             colDocumentNo.Width = 116;
@@ -226,6 +231,7 @@
             colSourceId.Caption = "Kaynak Id";
             colSourceId.FieldName = "SourceId";
             colSourceId.Name = "colSourceId";
+            colSourceId.OptionsColumn.AllowEdit = false;
             colSourceId.Visible = true;
             colSourceId.VisibleIndex = 6;
             colSourceId.Width = 64;
@@ -235,6 +241,7 @@
             colSourceType.Caption = "Kaynak Türü";
             colSourceType.FieldName = "SourceType";
             colSourceType.Name = "colSourceType";
+            colSourceType.OptionsColumn.AllowEdit = false;
             colSourceType.Visible = true;
             colSourceType.VisibleIndex = 7;
             colSourceType.Width = 64;
@@ -246,6 +253,7 @@
             colAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colAmount.FieldName = "Amount";
             colAmount.Name = "colAmount";
+            colAmount.OptionsColumn.AllowEdit = false;
             colAmount.Visible = true;
             colAmount.VisibleIndex = 8;
             colAmount.Width = 64;
@@ -255,6 +263,7 @@
             colFlowDirection.Caption = "Giriş/Çıkış";
             colFlowDirection.FieldName = "FlowDirection";
             colFlowDirection.Name = "colFlowDirection";
+            colFlowDirection.OptionsColumn.AllowEdit = false;
             colFlowDirection.Visible = true;
             colFlowDirection.VisibleIndex = 9;
             colFlowDirection.Width = 64;
@@ -264,6 +273,7 @@
             colCurrency.Caption = "Döviz Türü";
             colCurrency.FieldName = "Currency";
             colCurrency.Name = "colCurrency";
+            colCurrency.OptionsColumn.AllowEdit = false;
             colCurrency.Visible = true;
             colCurrency.VisibleIndex = 10;
             colCurrency.Width = 64;
@@ -275,6 +285,7 @@
             colExchangeRate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colExchangeRate.FieldName = "ExchangeRate";
             colExchangeRate.Name = "colExchangeRate";
+            colExchangeRate.OptionsColumn.AllowEdit = false;
             colExchangeRate.Visible = true;
             colExchangeRate.VisibleIndex = 11;
             colExchangeRate.Width = 64;
@@ -284,6 +295,7 @@
             colDescription.Caption = "Açıklama";
             colDescription.FieldName = "Description";
             colDescription.Name = "colDescription";
+            colDescription.OptionsColumn.AllowEdit = false;
             colDescription.Visible = true;
             colDescription.VisibleIndex = 12;
             colDescription.Width = 64;
@@ -293,6 +305,7 @@
             colCreatedOnUtc.Caption = "Kayıt Tarih";
             colCreatedOnUtc.FieldName = "CreatedOnUtc";
             colCreatedOnUtc.Name = "colCreatedOnUtc";
+            colCreatedOnUtc.OptionsColumn.AllowEdit = false;
             colCreatedOnUtc.Visible = true;
             colCreatedOnUtc.VisibleIndex = 13;
             // 
@@ -301,6 +314,7 @@
             colUpdatedOnUtc.Caption = "Güncellenme Tarihi";
             colUpdatedOnUtc.FieldName = "UpdatedOnUtc";
             colUpdatedOnUtc.Name = "colUpdatedOnUtc";
+            colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
             colUpdatedOnUtc.Visible = true;
             colUpdatedOnUtc.VisibleIndex = 14;
             // 
@@ -308,6 +322,7 @@
             // 
             colId.FieldName = "Id";
             colId.Name = "colId";
+            colId.OptionsColumn.AllowEdit = false;
             colId.Visible = true;
             colId.VisibleIndex = 0;
             // 

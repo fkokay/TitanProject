@@ -103,6 +103,7 @@
             barButtonItemEdit.Caption = "Düzenle";
             barButtonItemEdit.Id = 1;
             barButtonItemEdit.Name = "barButtonItemEdit";
+            barButtonItemEdit.ItemClick += barButtonItemEdit_ItemClick;
             // 
             // barButtonItemDelete
             // 
