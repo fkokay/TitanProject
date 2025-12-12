@@ -60,7 +60,7 @@ namespace Titan.WinForms.Views
                 buttonEditCustomerName.Text = EditInvoice.Customer?.Definition;
 
 
-                gridControlLine.DataSource = _context.InvoiceLines.Include(m=>m.Item)
+                gridControlLine.DataSource = _context.InvoiceLines.Include(m => m.Item)
                     .Where(l => l.InvoiceId == EditInvoice.Id)
                     .ToList();
             }
@@ -78,6 +78,12 @@ namespace Titan.WinForms.Views
                 this.Text = "Alış Faturası";
             }
 
+        }
+
+        private void simpleButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

@@ -166,6 +166,7 @@
             gridControlCustomerTransaction.Size = new System.Drawing.Size(1077, 651);
             gridControlCustomerTransaction.TabIndex = 4;
             gridControlCustomerTransaction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewCustomerTransaction });
+            gridControlCustomerTransaction.DoubleClick += gridControlCustomerTransaction_DoubleClick;
             // 
             // pLinqInstantFeedbackSource
             // 

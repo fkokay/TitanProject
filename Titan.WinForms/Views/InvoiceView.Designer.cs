@@ -39,6 +39,9 @@
             gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             panelControl2 = new DevExpress.XtraEditors.PanelControl();
             textEditDescription = new DevExpress.XtraEditors.TextEdit();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -50,9 +53,6 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             textEditInvoiceNo = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControlLine).BeginInit();
@@ -86,6 +86,7 @@
             simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
             simpleButtonCancel.TabIndex = 1;
             simpleButtonCancel.Text = "Vazgeç";
+            simpleButtonCancel.Click += simpleButtonCancel_Click;
             // 
             // simpleButtonSave
             // 
@@ -161,6 +162,29 @@
             gridColumn6.Name = "gridColumn6";
             gridColumn6.Visible = true;
             gridColumn6.VisibleIndex = 5;
+            // 
+            // gridColumn7
+            // 
+            gridColumn7.Caption = "Tutarı";
+            gridColumn7.FieldName = "TotalLocal";
+            gridColumn7.Name = "gridColumn7";
+            gridColumn7.Visible = true;
+            gridColumn7.VisibleIndex = 6;
+            // 
+            // gridColumn8
+            // 
+            gridColumn8.Caption = "KDV Tutarı";
+            gridColumn8.Name = "gridColumn8";
+            gridColumn8.Visible = true;
+            gridColumn8.VisibleIndex = 7;
+            // 
+            // gridColumn9
+            // 
+            gridColumn9.Caption = "Net Tutar";
+            gridColumn9.FieldName = "LineTotal";
+            gridColumn9.Name = "gridColumn9";
+            gridColumn9.Visible = true;
+            gridColumn9.VisibleIndex = 8;
             // 
             // panelControl2
             // 
@@ -261,29 +285,6 @@
             labelControl1.Size = new System.Drawing.Size(48, 13);
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Fatura No";
-            // 
-            // gridColumn7
-            // 
-            gridColumn7.Caption = "Tutarı";
-            gridColumn7.FieldName = "TotalLocal";
-            gridColumn7.Name = "gridColumn7";
-            gridColumn7.Visible = true;
-            gridColumn7.VisibleIndex = 6;
-            // 
-            // gridColumn8
-            // 
-            gridColumn8.Caption = "KDV Tutarı";
-            gridColumn8.Name = "gridColumn8";
-            gridColumn8.Visible = true;
-            gridColumn8.VisibleIndex = 7;
-            // 
-            // gridColumn9
-            // 
-            gridColumn9.Caption = "Net Tutar";
-            gridColumn9.FieldName = "LineTotal";
-            gridColumn9.Name = "gridColumn9";
-            gridColumn9.Visible = true;
-            gridColumn9.VisibleIndex = 8;
             // 
             // InvoiceView
             // 

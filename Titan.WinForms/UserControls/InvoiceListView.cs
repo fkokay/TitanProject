@@ -48,5 +48,17 @@ namespace Titan.WinForms.UserControls
             }
 
         }
+
+        private void gridViewInvoice_DoubleClick(object sender, EventArgs e)
+        {
+            var form = _provider.GetRequiredService<InvoiceView>();
+            var invoiceId = Convert.ToInt32(gridViewInvoice.GetFocusedRowCellValue("Id"));
+            form.EditInvoice = _context.Invoices.Include(m => m.Customer).FirstOrDefault(i => i.Id == invoiceId);
+            form.InvoiceType = InvoiceType;
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                pLinqInstantFeedbackSource.Refresh();
+            }
+        }
     }
 }

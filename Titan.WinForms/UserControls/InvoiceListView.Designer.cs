@@ -185,6 +185,7 @@
             gridViewInvoice.Name = "gridViewInvoice";
             gridViewInvoice.OptionsView.ShowAutoFilterRow = true;
             gridViewInvoice.OptionsView.ShowGroupPanel = false;
+            gridViewInvoice.DoubleClick += gridViewInvoice_DoubleClick;
             // 
             // colInvoiceType
             // 
@@ -327,8 +328,6 @@
             colUUID.FieldName = "UUID";
             colUUID.Name = "colUUID";
             colUUID.OptionsColumn.AllowEdit = false;
-            colUUID.Visible = true;
-            colUUID.VisibleIndex = 16;
             colUUID.Width = 38;
             // 
             // colEInvoiceStatusMessage
@@ -337,7 +336,7 @@
             colEInvoiceStatusMessage.Name = "colEInvoiceStatusMessage";
             colEInvoiceStatusMessage.OptionsColumn.AllowEdit = false;
             colEInvoiceStatusMessage.Visible = true;
-            colEInvoiceStatusMessage.VisibleIndex = 17;
+            colEInvoiceStatusMessage.VisibleIndex = 16;
             colEInvoiceStatusMessage.Width = 38;
             // 
             // colCreatedOnUtc
@@ -346,7 +345,7 @@
             colCreatedOnUtc.Name = "colCreatedOnUtc";
             colCreatedOnUtc.OptionsColumn.AllowEdit = false;
             colCreatedOnUtc.Visible = true;
-            colCreatedOnUtc.VisibleIndex = 18;
+            colCreatedOnUtc.VisibleIndex = 17;
             colCreatedOnUtc.Width = 38;
             // 
             // colUpdatedOnUtc
@@ -355,7 +354,7 @@
             colUpdatedOnUtc.Name = "colUpdatedOnUtc";
             colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
             colUpdatedOnUtc.Visible = true;
-            colUpdatedOnUtc.VisibleIndex = 19;
+            colUpdatedOnUtc.VisibleIndex = 18;
             colUpdatedOnUtc.Width = 63;
             // 
             // colId
