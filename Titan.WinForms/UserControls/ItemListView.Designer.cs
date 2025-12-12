@@ -52,6 +52,8 @@
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             bar2 = new DevExpress.XtraBars.Bar();
+            colVariantId = new DevExpress.XtraGrid.Columns.GridColumn();
+            colVariantCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)gridViewItemVariant).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControlItem).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewItem).BeginInit();
@@ -82,12 +84,11 @@
             // 
             // gridViewItem
             // 
-            gridViewItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colStock, colActive, colCreatedOnUtc, colUpdatedOnUtc });
+            gridViewItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colId, colCode, colName, colVariantId, colVariantCode, colStock, colActive, colCreatedOnUtc, colUpdatedOnUtc });
             gridViewItem.GridControl = gridControlItem;
             gridViewItem.Name = "gridViewItem";
             gridViewItem.OptionsView.ShowAutoFilterRow = true;
             gridViewItem.OptionsView.ShowGroupPanel = false;
-            gridViewItem.MasterRowGetChildList += gridViewItem_MasterRowGetChildList;
             // 
             // colId
             // 
@@ -122,7 +123,7 @@
             colStock.Name = "colStock";
             colStock.OptionsColumn.AllowEdit = false;
             colStock.Visible = true;
-            colStock.VisibleIndex = 3;
+            colStock.VisibleIndex = 4;
             // 
             // colActive
             // 
@@ -131,7 +132,7 @@
             colActive.Name = "colActive";
             colActive.OptionsColumn.AllowEdit = false;
             colActive.Visible = true;
-            colActive.VisibleIndex = 4;
+            colActive.VisibleIndex = 5;
             // 
             // colCreatedOnUtc
             // 
@@ -140,7 +141,7 @@
             colCreatedOnUtc.Name = "colCreatedOnUtc";
             colCreatedOnUtc.OptionsColumn.AllowEdit = false;
             colCreatedOnUtc.Visible = true;
-            colCreatedOnUtc.VisibleIndex = 5;
+            colCreatedOnUtc.VisibleIndex = 6;
             // 
             // colUpdatedOnUtc
             // 
@@ -149,7 +150,7 @@
             colUpdatedOnUtc.Name = "colUpdatedOnUtc";
             colUpdatedOnUtc.OptionsColumn.AllowEdit = false;
             colUpdatedOnUtc.Visible = true;
-            colUpdatedOnUtc.VisibleIndex = 6;
+            colUpdatedOnUtc.VisibleIndex = 7;
             // 
             // barManager
             // 
@@ -257,6 +258,22 @@
             bar2.OptionsBar.UseWholeRow = true;
             bar2.Text = "Main menu";
             // 
+            // colVariantId
+            // 
+            colVariantId.Caption = "Varyant Id";
+            colVariantId.FieldName = "VariantId";
+            colVariantId.Name = "colVariantId";
+            colVariantId.OptionsColumn.AllowEdit = false;
+            // 
+            // colVariantCode
+            // 
+            colVariantCode.Caption = "Varyant Kodu";
+            colVariantCode.FieldName = "VariantCode";
+            colVariantCode.Name = "colVariantCode";
+            colVariantCode.OptionsColumn.AllowEdit = false;
+            colVariantCode.Visible = true;
+            colVariantCode.VisibleIndex = 3;
+            // 
             // ItemListView
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,7 +285,6 @@
             Controls.Add(barDockControlTop);
             Name = "ItemListView";
             Size = new System.Drawing.Size(955, 521);
-            Load += ItemListView_Load;
             ((System.ComponentModel.ISupportInitialize)gridViewItemVariant).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControlItem).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridViewItem).EndInit();
@@ -302,5 +318,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colStock;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewItemVariant;
+        private DevExpress.XtraGrid.Columns.GridColumn colVariantId;
+        private DevExpress.XtraGrid.Columns.GridColumn colVariantCode;
     }
 }
